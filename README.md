@@ -28,11 +28,12 @@ Este repositorio contiene la web oficial de presentación del estudio, pensada p
 
 ## 🌟 Características Destacadas
 
-- **Estética Dark-Mode Premium:** Inspirada en interfaces modernas (Linear, Vercel), con balance cromático pulido y acentos cian/azul controlados para evitar saturación visual.
-- **Showcase Interactivo en el Hero:** Dispositivo interactivo para alternar y previsualizar en vivo los desarrollos destacados (Motos GMW, Vivero Vía Verde, Danza Sánchez, Almacén PH, Maderar).
-- **Portfolio con Filtro por Categorías:** Clasificación dinámica de casos de estudio por rubro con ventanas modales detalladas.
-- **Calculadora de Presupuesto Express:** Herramienta interactiva que calcula presupuestos en tiempo real y genera un mensaje prearmado para consultar vía WhatsApp en un clic.
-- **Microinteracciones Modernas:** Cursor spotlight glow, barra de navegación con glassmorphism al hacer scroll, acordeón FAQ fluido y toast notifications.
+- **Estética Neo-Precision Studio (Dark Mode):** Obsidian Canvas profundo, Electric Indigo, acentos Cyan y Emerald, micro-bordes milimétricos y texturas satinadas de nivel internacional (estilo Linear, Raycast, Framer Premier Studios).
+- **Arquitectura de Navegación Anti-Superposición:** Header flotante con glassmorphism nativo (`backdrop-filter: blur(20px)`), altura controlada, `scroll-margin-top` en todas las secciones para evitar que los títulos queden ocultos, y drawer móvil táctil accesible con bloqueo de scroll.
+- **Showcase Interactivo en el Hero:** Navegador simulado con pestañas en tiempo real para alternar y previsualizar en vivo los desarrollos destacados (Motos GMW, Vivero Vía Verde, Danza Sánchez, Almacén PH, Maderar).
+- **Portfolio con Filtro por Categorías:** Clasificación dinámica de casos de estudio por rubro con ventanas modales detalladas con desafíos, soluciones y métricas de conversión.
+- **Calculadora de Presupuesto Express:** Herramienta interactiva que calcula presupuestos en tiempo real y genera un mensaje prearmado personalizado para consultar vía WhatsApp en un clic.
+- **Microinteracciones Modernas:** Cursor spotlight glow, acordeón FAQ fluido y accesible, botones con copia de portapapeles y toast notifications instantáneas.
 - **Zero Dependencies:** Construido en HTML5 semántico, CSS3 moderno con variables nativas y JavaScript Vanilla modular. Máxima velocidad de carga (&lt; 1.2s).
 
 ---

@@ -1,140 +1,225 @@
 /**
- * POLDEV ESTUDIO - Interactive Core Logic
- * High performance, zero runtime dependencies.
+ * POLDEV ESTUDIO — Neo-Precision Core Interactive Engine
+ * Performance: Zero external runtime dependencies, 60fps animations.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initCursorGlow();
-  initHeaderScroll();
+  initCursorSpotlight();
+  initHeaderNavigation();
+  initMobileDrawer();
   initHeroShowcase();
-  initPortfolioFilter();
-  initProjectModal();
+  initPortfolioFilters();
+  initCaseStudyModal();
   initBudgetCalculator();
   initFaqAccordion();
-  initMobileMenu();
-  initContactActions();
+  initContactInquiryForm();
+  initClipboardButtons();
 });
 
 /* --------------------------------------------------------------------------
-   1. MOUSE FOLLOW GLOW (Linear / Vercel style)
+   1. CURSOR SPOTLIGHT
    -------------------------------------------------------------------------- */
-function initCursorGlow() {
-  const glow = document.querySelector('.cursor-glow');
-  if (!glow || window.matchMedia('(hover: none)').matches) return;
+function initCursorSpotlight() {
+  const spotlight = document.getElementById('cursorSpotlight');
+  if (!spotlight || window.matchMedia('(hover: none)').matches) return;
 
   let mouseX = 0, mouseY = 0;
-  let currentX = 0, currentY = 0;
+  let curX = 0, curY = 0;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+  }, { passive: true });
 
-  function animate() {
-    currentX += (mouseX - currentX) * 0.12;
-    currentY += (mouseY - currentY) * 0.12;
-    glow.style.left = `${currentX}px`;
-    glow.style.top = `${currentY}px`;
-    requestAnimationFrame(animate);
+  function render() {
+    curX += (mouseX - curX) * 0.12;
+    curY += (mouseY - curY) * 0.12;
+    spotlight.style.left = `${curX}px`;
+    spotlight.style.top = `${curY}px`;
+    requestAnimationFrame(render);
   }
-  requestAnimationFrame(animate);
+  requestAnimationFrame(render);
 }
 
 /* --------------------------------------------------------------------------
-   2. HEADER SCROLL & SCROLLSPY
+   2. HEADER SCROLL & SCROLLSPY (ANTI-OVERLAP NAVIGATION)
    -------------------------------------------------------------------------- */
-function initHeaderScroll() {
-  const header = document.querySelector('.site-header');
-  const navLinks = document.querySelectorAll('.desktop-nav .nav-link, .mobile-menu-drawer .nav-link');
+function initHeaderNavigation() {
+  const header = document.getElementById('siteHeader');
+  const desktopLinks = document.querySelectorAll('.desktop-nav .nav-link');
   const sections = document.querySelectorAll('section[id]');
 
+  if (!header) return;
+
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
     }
 
-    // Scrollspy
-    let currentSectionId = '';
-    const scrollPos = window.scrollY + 120;
+    // Scrollspy activo
+    let currentId = '';
+    const scrollMarker = window.scrollY + 140;
 
     sections.forEach(sec => {
       const top = sec.offsetTop;
       const height = sec.offsetHeight;
-      if (scrollPos >= top && scrollPos < top + height) {
-        currentSectionId = sec.getAttribute('id');
+      if (scrollMarker >= top && scrollMarker < top + height) {
+        currentId = sec.getAttribute('id');
       }
     });
 
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentSectionId}`) {
-        link.classList.add('active');
-      }
-    });
+    if (currentId) {
+      desktopLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
   }, { passive: true });
 }
 
 /* --------------------------------------------------------------------------
-   3. HERO SHOWCASE DEVICE TAB SWITCHER
+   3. MOBILE DRAWER NAVIGATION
    -------------------------------------------------------------------------- */
-const heroProjectsData = {
+function initMobileDrawer() {
+  const toggleBtn = document.getElementById('mobileNavToggle');
+  const drawer = document.getElementById('mobileNavDrawer');
+  const overlay = document.getElementById('mobileDrawerOverlay');
+  const closeBtn = document.getElementById('mobileDrawerClose');
+  const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+  if (!toggleBtn || !drawer || !overlay) return;
+
+  function openDrawer() {
+    drawer.classList.add('active');
+    overlay.classList.add('active');
+    document.body.classList.add('menu-open');
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    drawer.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  toggleBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  overlay.addEventListener('click', closeDrawer);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeDrawer();
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   4. DATA DE CASOS DE ESTUDIO (PROYECTOS REALES)
+   -------------------------------------------------------------------------- */
+const projectsDatabase = {
   gmw: {
     title: "Motos GMW",
-    badge: "Taller & Repuestos",
-    desc: "Presencia digital para taller mecánico y venta de repuestos multimarcas con agenda de turnos online.",
-    img: "assets/projects/gmw-hero.jpg",
+    category: "Taller & Repuestos",
+    tag: "Taller Mecánico & Repuestos",
     url: "gmwmotos.com.ar",
+    img: "assets/projects/gmw-hero.jpg",
     metric: "+140% consultas por WhatsApp",
-    stack: "HTML5 • CSS3 • WhatsApp API"
+    summary: "Presencia digital para taller oficial y venta de repuestos multimarca (Yamaha, Honda, Motomel, Corven) con solicitud de turnos online.",
+    challenge: "El taller recibía llamadas dispersas y pedidos sin datos de marca/modelo por mensajes informales, lo que generaba demoras y pérdida de turnos de service.",
+    solution: "POLDEV diseñó un sitio ultra-rápido en modo oscuro de alto impacto, con botón de turnos con mensaje pre-redactado a WhatsApp y catálogo visual de marcas y servicios.",
+    metrics: [
+      { figure: "+140%", label: "Consultas por WhatsApp" },
+      { figure: "1.0s", label: "Velocidad de carga móvil" },
+      { figure: "Top 3", label: "Posicionamiento en zona" }
+    ]
   },
   vivero: {
     title: "Vivero Vía Verde",
-    badge: "Jardinería & Plantas",
-    desc: "Catálogo botánico visual de plantas de interior/exterior e insumos de cultivo con atención directa.",
-    img: "assets/projects/vivero-hero.jpg",
+    category: "Jardinería & Plantas",
+    tag: "Plantas de Interior & Jardinería",
     url: "viveroviaverde.com.ar",
-    metric: "Catálogo 50+ especies",
-    stack: "Mobile-First • WebP • SEO"
+    img: "assets/projects/vivero-hero.jpg",
+    metric: "50+ especies exhibidas",
+    summary: "Catálogo botánico visual de plantas de interior, exterior, macetas artesanales e insumos para el cuidado botánico.",
+    challenge: "Los clientes preguntaban constantemente por stock, cuidados de luz y riego, y precios a través de historias efímeras en Instagram que requerían atención manual constante.",
+    solution: "Implementamos una galería visual optimizada con WebP y fichas sintéticas de cuidados botánicos, permitiendo a los clientes pedir cotizaciones y asesoría en 1 clic.",
+    metrics: [
+      { figure: "50+", label: "Especies catalogadas" },
+      { figure: "3.2x", label: "Permanencia en la web" },
+      { figure: "100%", label: "Diseño Mobile-First" }
+    ]
   },
   danza: {
     title: "Escuela Danza Julieta Sánchez",
-    badge: "Academia & Arte",
-    desc: "Sitio web oficial con grilla de horarios de disciplinas, acrobacia en tela e inscripción digital en un clic.",
-    img: "assets/projects/danza-hero.jpg",
+    category: "Educación & Arte",
+    tag: "Academia de Danza & Acrobacia",
     url: "danzajulieta.com.ar",
-    metric: "80+ nuevas inscripciones",
-    stack: "Diseño Editorial • Formulario"
+    img: "assets/projects/danza-hero.jpg",
+    metric: "80+ inscripciones gestionadas",
+    summary: "Sitio web institucional con estética editorial para clases de ballet clásico, acrobacia aérea en tela y gimnasia artística en Escobar.",
+    challenge: "El proceso de inscripción requería enviar planillas físicas y PDFs pesados por correo que los padres no llegaban a leer en sus celulares.",
+    solution: "Creamos una plataforma estilizada con tipografía editorial, grilla de horarios interactiva y reserva directa de cupo para clases de prueba por WhatsApp.",
+    metrics: [
+      { figure: "80+", label: "Alumnas inscriptas" },
+      { figure: "-70%", label: "Tiempo de atención administrativa" },
+      { figure: "0.9s", label: "Carga en 4G" }
+    ]
   },
   almacen: {
     title: "Almacén PH",
-    badge: "Comercio de Barrio",
-    desc: "Digitalización de almacén barrial con ofertas del día, historia comunitaria y pedidos al paso.",
-    img: "assets/projects/almacen-fachada.jpg",
+    category: "Comercio Minorista",
+    tag: "Comercio Minorista de Barrio",
     url: "almacenph.com.ar",
-    metric: "Google Maps verificado",
-    stack: "Geolocalización • Catálogo"
+    img: "assets/projects/almacen-fachada.jpg",
+    metric: "Geolocalización barrial",
+    summary: "Página web barrial para almacén de comestibles, fiambrería y bebidas, destacando la cercanía, promociones semanales y ubicación precisa.",
+    challenge: "El almacén abría en una zona de nuevos loteos residenciales y los vecinos recién mudados no sabían de su existencia en Google Maps ni cómo hacer pedidos al paso.",
+    solution: "Desarrollo de una One-Page ágil con fotos reales de la fachada, geolocalización directa con Google Maps e integración de promociones del día para pedidos por WhatsApp.",
+    metrics: [
+      { figure: "+300", label: "Vecinos guiados por Maps" },
+      { figure: "4.9 ★", label: "Calificación Google Search" },
+      { figure: "<0.8s", label: "Carga ultra veloz" }
+    ]
   },
   maderar: {
     title: "Maderar Maderas",
-    badge: "Industria & Techos",
-    desc: "Catálogo de tirantes, vigas y aislantes térmicos con cotizaciones rápidas para carpinteros y constructores.",
-    img: "assets/projects/maderar-hero.jpg",
+    category: "Industria & Construcción",
+    tag: "Industria, Maderas & Techos",
     url: "maderar.com.ar",
+    img: "assets/projects/maderar-hero.jpg",
     metric: "Cotizaciones en <10min",
-    stack: "Calculador • Responsive"
+    summary: "Catálogo técnico de tirantes, vigas laminadas, machimbres y aislaciones térmicas para constructores y carpinteros.",
+    challenge: "Los profesionales de la construcción necesitaban calcular medidas y precios de tirantes y maderas de forma ágil desde las obras sin esperar presupuestos lentos.",
+    solution: "Construimos un catálogo de alta precisión con tablas de especificaciones técnicas y un cotizador express directo al WhatsApp mayorista.",
+    metrics: [
+      { figure: "<10min", label: "Respuesta de presupuesto" },
+      { figure: "+65%", label: "Presupuestos cerrados" },
+      { figure: "CDN", label: "Alojamiento global cloud" }
+    ]
   }
 };
 
+/* --------------------------------------------------------------------------
+   5. HERO SHOWCASE SWITCHER
+   -------------------------------------------------------------------------- */
 function initHeroShowcase() {
-  const tabs = document.querySelectorAll('.device-tab-btn');
-  const imgEl = document.getElementById('heroScreenImg');
-  const badgeEl = document.getElementById('heroScreenBadge');
-  const titleEl = document.getElementById('heroScreenTitle');
-  const descEl = document.getElementById('heroScreenDesc');
-  const urlEl = document.getElementById('heroScreenUrl');
-  const metricEl = document.getElementById('heroScreenMetric');
+  const tabs = document.querySelectorAll('.showcase-tab-trigger');
+  const imgEl = document.getElementById('showcaseImg');
+  const urlEl = document.getElementById('showcaseUrl');
+  const tagEl = document.getElementById('showcaseTag');
+  const titleEl = document.getElementById('showcaseTitle');
+  const descEl = document.getElementById('showcaseDesc');
+  const metricEl = document.getElementById('showcaseMetric');
+  const inspectBtn = document.getElementById('showcaseInspectBtn');
 
   if (!tabs.length || !imgEl) return;
 
@@ -144,36 +229,47 @@ function initHeroShowcase() {
       tab.classList.add('active');
 
       const projectKey = tab.dataset.project;
-      const data = heroProjectsData[projectKey];
+      const data = projectsDatabase[projectKey];
       if (!data) return;
 
-      // Animate transition
-      imgEl.style.opacity = '0';
-      imgEl.style.transform = 'scale(1.03)';
+      // Animación suave de cambio
+      imgEl.style.opacity = '0.3';
+      imgEl.style.transform = 'scale(0.98)';
 
       setTimeout(() => {
         imgEl.src = data.img;
-        badgeEl.textContent = data.badge;
-        titleEl.textContent = data.title;
-        descEl.textContent = data.desc;
         urlEl.textContent = data.url;
-        metricEl.textContent = data.metric;
+        tagEl.textContent = data.tag;
+        titleEl.textContent = data.title;
+        descEl.textContent = data.summary;
+        metricEl.innerHTML = `
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          ${data.metric}
+        `;
+        if (inspectBtn) inspectBtn.dataset.target = projectKey;
 
         imgEl.style.opacity = '1';
         imgEl.style.transform = 'scale(1)';
-      }, 200);
+      }, 160);
     });
   });
+
+  if (inspectBtn) {
+    inspectBtn.addEventListener('click', () => {
+      const key = inspectBtn.dataset.target || 'gmw';
+      openCaseModal(key);
+    });
+  }
 }
 
 /* --------------------------------------------------------------------------
-   4. PORTFOLIO FILTERING
+   6. FILTRO DE PORTFOLIO
    -------------------------------------------------------------------------- */
-function initPortfolioFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
+function initPortfolioFilters() {
+  const filterBtns = document.querySelectorAll('.filter-pill-btn');
+  const cards = document.querySelectorAll('.project-case-card');
 
-  if (!filterBtns.length || !projectCards.length) return;
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -182,20 +278,20 @@ function initPortfolioFilter() {
 
       const filterVal = btn.dataset.filter;
 
-      projectCards.forEach(card => {
-        const category = card.dataset.category;
-        if (filterVal === 'all' || category === filterVal) {
+      cards.forEach(card => {
+        const cat = card.dataset.category;
+        if (filterVal === 'all' || cat === filterVal) {
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-          }, 10);
+          }, 40);
         } else {
           card.style.opacity = '0';
-          card.style.transform = 'translateY(15px)';
+          card.style.transform = 'translateY(12px)';
           setTimeout(() => {
             card.style.display = 'none';
-          }, 250);
+          }, 200);
         }
       });
     });
@@ -203,119 +299,36 @@ function initPortfolioFilter() {
 }
 
 /* --------------------------------------------------------------------------
-   5. CASE STUDY MODAL DETAILS
+   7. MODAL DE CASO DE ESTUDIO
    -------------------------------------------------------------------------- */
-const detailedProjects = {
-  gmw: {
-    title: "Motos GMW - Taller Especializado & Repuestos",
-    tag: "Taller Mecánico & Repuestos Multimarca",
-    img: "assets/projects/gmw-fachada.jpg",
-    summary: "Motos GMW necesitaba profesionalizar su presencia online para dejar de depender únicamente del boca a boca y del teléfono de línea.",
-    challenge: "El cliente perdía muchas consultas de personas que buscaban services o repuestos en Google y no encontraban una vía rápida para coordinar turnos ni saber con qué marcas trabajaban.",
-    solution: "Desarrollamos una web ágil con catálogo de marcas líderes (Honda, Yamaha, Motomel, Zanella, Castrol), botón directo para solicitar turnos de mantenimiento por WhatsApp y geolocalización exacta del taller en Belén de Escobar.",
-    metrics: [
-      { label: "Consultas Directas", val: "+140%" },
-      { label: "Tiempo de Carga", val: "0.9s" },
-      { label: "Google Score", val: "99/100" }
-    ]
-  },
-  vivero: {
-    title: "Vivero Vía Verde - Catálogo Botánico Digital",
-    tag: "Jardinería, Plantas & Insumos",
-    img: "assets/projects/vivero-hero.jpg",
-    summary: "Vivero Vía Verde cuenta con una enorme variedad botánica y necesitaba un escaparate virtual limpio y ordenado para mostrar sus especies y cuidados.",
-    challenge: "Muchos clientes preguntaban repetidamente por WhatsApp qué plantas tenían disponibles para sombra o sol y cuáles eran sus cuidados básicos.",
-    solution: "Creamos un catálogo visual categorizado por tipo de especie (interior, exterior, suculentas, insumos), con fichas técnicas simples y un botón para pedir el ejemplar directamente por chat.",
-    metrics: [
-      { label: "Especies mostradas", val: "+50" },
-      { label: "Carga en Móvil", val: "1.1s" },
-      { label: "Satisfacción Cliente", val: "100%" }
-    ]
-  },
-  danza: {
-    title: "Escuela de Danza Julieta Sánchez",
-    tag: "Institución Educativa & Artística",
-    img: "assets/projects/danza-hero.jpg",
-    summary: "Academia de danza clásica, acrobacia en tela y gimnasia artística que precisaba un sitio web refinado que reflejara la pasión y el nivel de sus clases.",
-    challenge: "Centralizar los horarios de todas las disciplinas, edades y niveles para evitar confusiones y agilizar el proceso de inscripción anual.",
-    solution: "Diseñamos un sitio institucional con estética visual cuidada, cronograma de horarios interactivo y formulario ágil para reservar cupos de clases de prueba.",
-    metrics: [
-      { label: "Inscripciones Online", val: "+80" },
-      { label: "Posicionamiento SEO", val: "Top 3 Zona" },
-      { label: "Optimización", val: "100% Mobile" }
-    ]
-  },
-  almacen: {
-    title: "Almacén PH - Digitalización Barrial",
-    tag: "Comercio Minorista de Cercanía",
-    img: "assets/projects/almacen-fachada.jpg",
-    summary: "Comercio histórico de barrio que decidió dar el paso hacia la era digital para fidelizar a los vecinos y atraer a nuevos residentes.",
-    challenge: "Transmitir la calidez y la historia del comercio tradicional de barrio sin perder dinamismo para comunicar ofertas y horarios de atención.",
-    solution: "Sitio One-Page moderno que combina la historia del local, fotos reales de la fachada y los mostradores, pizarra de promociones y botón de pedidos express.",
-    metrics: [
-      { label: "Perfil Google Maps", val: "Verificado" },
-      { label: "Velocidad", val: "0.8s" },
-      { label: "Retención Vecinos", val: "Alta" }
-    ]
-  },
-  maderar: {
-    title: "Maderar - Maderas, Techos & Construcción",
-    tag: "Comercio Mayorista e Industria",
-    img: "assets/projects/maderar-hero.jpg",
-    summary: "Empresa proveedora de maderas, vigas, tirantes y aislaciones térmicas para carpinteros, arquitectos y constructores.",
-    challenge: "Facilitar el pedido de presupuestos técnicos con medidas de tirantes y maderas para reducir llamadas telefónicas innecesarias.",
-    solution: "Catálogo estructurado con especificaciones técnicas de maderas nobles, aislantes y un cotizador de materiales que deriva la consulta ya armada al equipo de ventas.",
-    metrics: [
-      { label: "Tiempo de Cotización", val: "<10 min" },
-      { label: "Consultas B2B", val: "+65%" },
-      { label: "Disponibilidad", val: "99.9%" }
-    ]
-  }
-};
+function initCaseStudyModal() {
+  const modalOverlay = document.getElementById('caseModalOverlay');
+  const dismissBtn = document.getElementById('modalDismissBtn');
+  const openButtons = document.querySelectorAll('.btn-open-modal');
+  const ctaBtn = document.getElementById('modalCtaBtn');
 
-function initProjectModal() {
-  const modalOverlay = document.getElementById('projectModal');
-  const modalCloseBtn = document.getElementById('modalCloseBtn');
-  const viewDetailBtns = document.querySelectorAll('.btn-view-project');
+  if (!modalOverlay) return;
 
-  if (!modalOverlay || !modalCloseBtn) return;
-
-  viewDetailBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const projectKey = btn.dataset.project;
-      const data = detailedProjects[projectKey];
-      if (!data) return;
-
-      document.getElementById('modalTitle').textContent = data.title;
-      document.getElementById('modalTag').textContent = data.tag;
-      document.getElementById('modalImg').src = data.img;
-      document.getElementById('modalSummary').textContent = data.summary;
-      document.getElementById('modalChallenge').textContent = data.challenge;
-      document.getElementById('modalSolution').textContent = data.solution;
-
-      const metricsGrid = document.getElementById('modalMetricsGrid');
-      metricsGrid.innerHTML = data.metrics.map(m => `
-        <div class="modal-metric-box">
-          <div class="modal-metric-val">${m.val}</div>
-          <div class="modal-metric-label">${m.label}</div>
-        </div>
-      `).join('');
-
-      modalOverlay.classList.add('active');
-      document.body.style.overflow = 'hidden';
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.project;
+      openCaseModal(key);
     });
   });
 
   function closeModal() {
     modalOverlay.classList.remove('active');
-    document.body.style.overflow = '';
+    document.body.classList.remove('menu-open');
   }
 
-  modalCloseBtn.addEventListener('click', closeModal);
+  if (dismissBtn) dismissBtn.addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e) => {
     if (e.target === modalOverlay) closeModal();
   });
+
+  if (ctaBtn) {
+    ctaBtn.addEventListener('click', closeModal);
+  }
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
@@ -324,197 +337,218 @@ function initProjectModal() {
   });
 }
 
+function openCaseModal(projectKey) {
+  const modalOverlay = document.getElementById('caseModalOverlay');
+  const data = projectsDatabase[projectKey];
+  if (!modalOverlay || !data) return;
+
+  document.getElementById('modalCaseCategory').textContent = data.category;
+  document.getElementById('modalCaseTitle').textContent = data.title;
+  document.getElementById('modalCaseImg').src = data.img;
+  document.getElementById('modalCaseSummary').textContent = data.summary;
+  document.getElementById('modalCaseChallenge').textContent = data.challenge;
+  document.getElementById('modalCaseSolution').textContent = data.solution;
+
+  const metricsStrip = document.getElementById('modalMetricsStrip');
+  metricsStrip.innerHTML = '';
+
+  data.metrics.forEach(m => {
+    const chip = document.createElement('div');
+    chip.className = 'modal-metric-chip';
+    chip.innerHTML = `
+      <strong>${m.figure}</strong>
+      <span>${m.label}</span>
+    `;
+    metricsStrip.appendChild(chip);
+  });
+
+  modalOverlay.classList.add('active');
+  document.body.classList.add('menu-open');
+}
+
 /* --------------------------------------------------------------------------
-   6. INTERACTIVE BUDGET CALCULATOR & WHATSAPP GENERATOR
+   8. CALCULADORA DE PRESUPUESTO EXPRESS
    -------------------------------------------------------------------------- */
 function initBudgetCalculator() {
-  const choiceBtns = document.querySelectorAll('.calc-choice-btn');
-  const checkInputs = document.querySelectorAll('.calc-check-input');
-  const totalDisplay = document.getElementById('calcTotalEstimate');
-  const timeDisplay = document.getElementById('calcTimeEstimate');
-  const planNameDisplay = document.getElementById('calcPlanName');
-  const sendWhatsAppBtn = document.getElementById('btnCalcWhatsApp');
+  const planButtons = document.querySelectorAll('.plan-radio-card');
+  const addonCheckboxes = document.querySelectorAll('.addon-checkbox-input');
+  const addonLabels = document.querySelectorAll('.addon-checkbox-label');
 
-  if (!choiceBtns.length || !totalDisplay) return;
+  const summaryPlanName = document.getElementById('summaryPlanName');
+  const summaryTotalAmount = document.getElementById('summaryTotalAmount');
+  const summaryTimeEstimate = document.getElementById('summaryTimeEstimate');
+  const whatsappQuoteBtn = document.getElementById('btnSendQuoteWhatsapp');
 
-  const basePlans = {
-    institucional: { name: "Web Institucional & Comercial", basePrice: 180000, days: "5 a 7 días" },
-    landing: { name: "Landing Page de Conversión", basePrice: 120000, days: "3 a 5 días" },
-    ecommerce: { name: "Catálogo / Tienda con Carrito", basePrice: 280000, days: "10 a 14 días" }
+  if (!planButtons.length || !summaryTotalAmount) return;
+
+  const plans = {
+    institucional: { name: "Web Institucional & Comercio", price: 180000, time: "5 a 7 días hábiles" },
+    landing: { name: "Landing Page Ágil", price: 130000, time: "3 a 5 días hábiles" },
+    ecommerce: { name: "Catálogo / Tienda", price: 240000, time: "10 a 14 días hábiles" }
   };
 
-  const addOns = {
-    maps_seo: { label: "Google Maps & SEO Local", price: 35000 },
-    whatsapp_pro: { label: "WhatsApp Botón & Mensaje Pro", price: 20000 },
-    hosting_maintenance: { label: "Hosting Rápido + SSL + Mantenimiento Mensual", price: 25000 }
+  const addons = {
+    maps_seo: { name: "Google Maps & Alta en Buscador", price: 35000 },
+    whatsapp_pro: { name: "Botón Flotante con Mensajes Pre-redactados", price: 20000 },
+    cloud_hosting: { name: "Hosting Cloud Rápido + SSL (1er Mes)", price: 25000 }
   };
 
-  let currentPlanKey = 'institucional';
+  let selectedPlanKey = 'institucional';
 
-  function updateCalculation() {
-    const selectedPlan = basePlans[currentPlanKey];
-    let total = selectedPlan.basePrice;
-    let selectedAddonLabels = [];
+  planButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      planButtons.forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedPlanKey = btn.dataset.plan;
+      updateCalculator();
+    });
+  });
 
-    checkInputs.forEach(input => {
-      if (input.checked && addOns[input.value]) {
-        total += addOns[input.value].price;
-        selectedAddonLabels.push(addOns[input.value].label);
+  addonLabels.forEach(label => {
+    const input = label.querySelector('.addon-checkbox-input');
+    if (!input) return;
+
+    label.addEventListener('click', (e) => {
+      // Evitar doble evento si se clica el input directamente
+      if (e.target !== input) {
+        input.checked = !input.checked;
+      }
+      if (input.checked) {
+        label.classList.add('checked');
+      } else {
+        label.classList.remove('checked');
+      }
+      updateCalculator();
+    });
+  });
+
+  function updateCalculator() {
+    const currentPlan = plans[selectedPlanKey];
+    let total = currentPlan.price;
+    const activeAddonNames = [];
+
+    addonCheckboxes.forEach(cb => {
+      if (cb.checked) {
+        const item = addons[cb.value];
+        if (item) {
+          total += item.price;
+          activeAddonNames.push(item.name);
+        }
       }
     });
 
-    // Format currency (Argentine Peso style)
-    totalDisplay.textContent = `$${total.toLocaleString('es-AR')} ARS`;
-    timeDisplay.textContent = selectedPlan.days;
-    planNameDisplay.textContent = selectedPlan.name;
+    // Formatear precio ARS
+    const formattedPrice = `$${total.toLocaleString('es-AR')} ARS`;
 
-    // Build personalized WhatsApp text
-    let waText = `¡Hola Poldev Estudio! Estuve navegando en su web y me gustaría consultar por un presupuesto:%0A%0A`;
-    waText += `📌 *Tipo de proyecto:* ${selectedPlan.name}%0A`;
-    if (selectedAddonLabels.length > 0) {
-      waText += `➕ *Adicionales:* ${selectedAddonLabels.join(', ')}%0A`;
-    }
-    waText += `💰 *Presupuesto estimado:* $${total.toLocaleString('es-AR')} ARS%0A`;
-    waText += `⏱️ *Tiempo estimado:* ${selectedPlan.days}%0A%0A`;
-    waText += `¿Podríamos coordinar una breve charla para contarles sobre mi negocio?`;
+    summaryPlanName.textContent = currentPlan.name;
+    summaryTotalAmount.textContent = formattedPrice;
+    summaryTimeEstimate.textContent = currentPlan.time;
 
-    // Poldev WhatsApp Phone Number (Argentina)
-    const phoneNumber = "5491112345678";
-    sendWhatsAppBtn.href = `https://wa.me/${phoneNumber}?text=${waText}`;
+    // Generar link WhatsApp dinámico
+    const addonsText = activeAddonNames.length > 0 
+      ? ` con ${activeAddonNames.join(', ')}` 
+      : '';
+    
+    const message = `Hola Polo! Estuve cotizando en la web de POLDEV y me interesa el formato: ${currentPlan.name}${addonsText}. Presupuesto estimado: ${formattedPrice}. ¿Podemos coordinar una llamada o charlar detalles?`;
+
+    const encodedMsg = encodeURIComponent(message);
+    whatsappQuoteBtn.href = `https://wa.me/5491112345678?text=${encodedMsg}`;
   }
 
-  choiceBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      choiceBtns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      currentPlanKey = btn.dataset.plan;
-      updateCalculation();
-    });
-  });
-
-  checkInputs.forEach(input => {
-    input.addEventListener('change', updateCalculation);
-  });
-
-  // Initial calculation
-  updateCalculation();
+  // Inicializar cálculo en carga
+  updateCalculator();
 }
 
 /* --------------------------------------------------------------------------
-   7. FAQ ACCORDION
+   9. PREGUNTAS FRECUENTES (FAQ ACCORDION)
    -------------------------------------------------------------------------- */
 function initFaqAccordion() {
-  const faqItems = document.querySelectorAll('.faq-item');
+  const triggers = document.querySelectorAll('.faq-trigger-btn');
 
-  faqItems.forEach(item => {
-    const trigger = item.querySelector('.faq-trigger');
-    const body = item.querySelector('.faq-body');
-
+  triggers.forEach(trigger => {
     trigger.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
+      const panel = trigger.closest('.faq-panel-item');
+      const drawer = panel.querySelector('.faq-content-drawer');
+      const isOpen = panel.classList.contains('open');
 
-      // Close all others
-      faqItems.forEach(other => {
-        other.classList.remove('active');
-        const otherBody = other.querySelector('.faq-body');
-        if (otherBody) otherBody.style.maxHeight = null;
+      // Cerrar otros abiertos para mantener limpieza
+      document.querySelectorAll('.faq-panel-item.open').forEach(openPanel => {
+        if (openPanel !== panel) {
+          openPanel.classList.remove('open');
+          const d = openPanel.querySelector('.faq-content-drawer');
+          if (d) d.style.maxHeight = '0';
+          const t = openPanel.querySelector('.faq-trigger-btn');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        }
       });
 
-      // Toggle current
-      if (!isActive) {
-        item.classList.add('active');
-        body.style.maxHeight = body.scrollHeight + 'px';
+      if (isOpen) {
+        panel.classList.remove('open');
+        drawer.style.maxHeight = '0';
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        panel.classList.add('open');
+        drawer.style.maxHeight = `${drawer.scrollHeight}px`;
+        trigger.setAttribute('aria-expanded', 'true');
       }
     });
   });
 }
 
 /* --------------------------------------------------------------------------
-   8. MOBILE DRAWER MENU
+   10. FORMULARIO DE CONSULTA DIRECTO A WHATSAPP
    -------------------------------------------------------------------------- */
-function initMobileMenu() {
-  const toggleBtn = document.getElementById('mobileToggleBtn');
-  const drawer = document.getElementById('mobileMenuDrawer');
-  const overlay = document.getElementById('mobileMenuOverlay');
-  const closeBtn = document.getElementById('mobileMenuClose');
-  const links = drawer ? drawer.querySelectorAll('a') : [];
+function initContactInquiryForm() {
+  const form = document.getElementById('contactInquiryForm');
+  if (!form) return;
 
-  if (!toggleBtn || !drawer || !overlay) return;
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  function openMenu() {
-    drawer.classList.add('open');
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+    const name = document.getElementById('formClientName').value.trim();
+    const business = document.getElementById('formClientBusiness').value.trim();
+    const message = document.getElementById('formClientMessage').value.trim();
 
-  function closeMenu() {
-    drawer.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  }
+    if (!name || !message) return;
 
-  toggleBtn.addEventListener('click', openMenu);
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
+    let text = `Hola Polo! Mi nombre es ${name}`;
+    if (business) text += ` (del negocio/rubro: ${business})`;
+    text += `. Mi consulta para la web es: "${message}".`;
 
-  links.forEach(link => {
-    link.addEventListener('click', closeMenu);
+    const waUrl = `https://wa.me/5491112345678?text=${encodeURIComponent(text)}`;
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
   });
 }
 
 /* --------------------------------------------------------------------------
-   9. CONTACT ACTIONS & CLIPBOARD NOTICES
+   11. BOTONES DE COPIAR Y TOAST
    -------------------------------------------------------------------------- */
-function showToast(message) {
-  let toast = document.querySelector('.toast-notice');
-  if (!toast) {
-    toast = document.createElement('div');
-    toast.className = 'toast-notice';
-    document.body.appendChild(toast);
-  }
-  toast.innerHTML = `<span>✓</span> <span>${message}</span>`;
-  toast.classList.add('show');
+function initClipboardButtons() {
+  const copyButtons = document.querySelectorAll('.copy-mini-btn');
+  const toast = document.getElementById('toastAlert');
+  const toastMsg = document.getElementById('toastMessage');
 
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 3000);
-}
+  if (!copyButtons.length || !toast) return;
 
-function initContactActions() {
-  // Copy buttons
-  const copyBtns = document.querySelectorAll('.card-copy-btn');
-  copyBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+  let toastTimeout;
+
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
       const textToCopy = btn.dataset.copy;
       if (!textToCopy) return;
 
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast(`Copiado al portapapeles: ${textToCopy}`);
-      }).catch(() => {
-        showToast('No se pudo copiar automáticamente.');
-      });
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+        toastMsg.textContent = `Copiado: "${textToCopy}"`;
+        toast.classList.add('show');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2600);
+      } catch (err) {
+        console.error('Error al copiar al portapapeles:', err);
+      }
     });
   });
-
-  // Contact Form Submission
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('formName').value;
-      const business = document.getElementById('formBusiness').value;
-      const message = document.getElementById('formMessage').value;
-
-      let waText = `¡Hola Poldev Estudio! Mi nombre es ${encodeURIComponent(name)}`;
-      if (business) {
-        waText += ` de ${encodeURIComponent(business)}`;
-      }
-      waText += `.%0A%0AConsulta:%0A${encodeURIComponent(message)}`;
-
-      showToast('¡Redirigiendo a WhatsApp con tu consulta!');
-      setTimeout(() => {
-        window.open(`https://wa.me/5491112345678?text=${waText}`, '_blank');
-      }, 800);
-    });
-  }
 }
