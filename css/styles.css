@@ -1543,39 +1543,6 @@ button, input, textarea {
   }
 }
 
-/* Botón Flotante de WhatsApp */
-.floating-wa {
-  position: fixed;
-  bottom: calc(18px + env(safe-area-inset-bottom));
-  right: 18px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25d366;
-  color: #032210;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-  z-index: 900;
-  transition: var(--transition);
-}
-
-.floating-wa:hover {
-  transform: scale(1.08);
-}
-
-.wa-dot {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  width: 14px;
-  height: 14px;
-  background: #ef4444;
-  border-radius: 50%;
-  border: 2px solid var(--bg-body);
-}
-
 /* Toast */
 .toast {
   position: fixed;
