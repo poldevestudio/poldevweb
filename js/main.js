@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initPortfolioTabs();
   initFaqAccordion();
-  initCaseModal();
   initCopyButtons();
   initQuickContactForm();
   initScrollSpy();
+  initScrollReveal();
 });
 
 /* --------------------------------------------------------------------------
@@ -113,81 +113,7 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   4. MODAL DE CASO DE ESTUDIO (3 PROYECTOS SELECCIONADOS)
-   -------------------------------------------------------------------------- */
-const projectsData = {
-  gmw: {
-    title: "Motos GMW — Taller & Repuestos",
-    category: "Taller & Repuestos",
-    img: "assets/projects/gmw-hero.jpg",
-    summary: "Digitalización integral de taller mecánico oficial y venta de repuestos multimarca (Yamaha, Honda, Motomel).",
-    challenge: "El cliente perdía turnos porque los clientes llamaban en horarios ocupados sin especificar modelo ni falla de la moto.",
-    solution: "Diseñamos un sitio web móvil de carga instantánea con botón de turnos con mensaje pre-redactado hacia WhatsApp y catálogo de repuestos destacados."
-  },
-  vivero: {
-    title: "Vivero Vía Verde — Jardinería",
-    category: "Jardinería & Plantas",
-    img: "assets/projects/vivero-hero.jpg",
-    summary: "Catálogo botánico visual de plantas de interior, exterior e insumos de jardinería con asesoría.",
-    challenge: "Consultas repetitivas en Instagram sobre especies disponibles, luz requerida y precios.",
-    solution: "Un catálogo fotográfico optimizado en WebP donde los clientes pueden explorar especies con fichas de cuidados y solicitar pedidos por WhatsApp en un toque."
-  },
-  almacen: {
-    title: "Almacén PH — Comercio Barrial",
-    category: "Comercio Minorista",
-    img: "assets/projects/almacen-fachada.jpg",
-    summary: "Digitalización de almacén barrial tradicional con promociones semanales y mapa de ubicación.",
-    challenge: "Llegada de nuevos vecinos al barrio que no sabían de la existencia del almacén ni cómo llegar.",
-    solution: "One-Page ágil con geolocalización directa en Google Maps, fotos reales de la fachada y ofertas del día para pedidos rápidos."
-  }
-};
-
-function initCaseModal() {
-  const overlay = document.getElementById('modalCaseOverlay');
-  const closeBtn = document.getElementById('mCloseBtn');
-  const ctaBtn = document.getElementById('mCta');
-  const openBtns = document.querySelectorAll('.btn-modal');
-
-  if (!overlay) return;
-
-  function closeModal() {
-    overlay.classList.remove('open');
-    document.body.classList.remove('menu-open');
-  }
-
-  openBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const key = btn.dataset.project;
-      const data = projectsData[key];
-      if (!data) return;
-
-      document.getElementById('mTitle').textContent = data.title;
-      document.getElementById('mCategory').textContent = data.category;
-      document.getElementById('mImg').src = data.img;
-      document.getElementById('mSummary').textContent = data.summary;
-      document.getElementById('mChallenge').textContent = data.challenge;
-      document.getElementById('mSolution').textContent = data.solution;
-
-      overlay.classList.add('open');
-      document.body.classList.add('menu-open');
-    });
-  });
-
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
-  if (ctaBtn) ctaBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeModal();
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && overlay.classList.contains('open')) {
-      closeModal();
-    }
-  });
-}
-
-/* --------------------------------------------------------------------------
-   5. BOTONES DE COPIADO
+   4. BOTONES DE COPIADO
    -------------------------------------------------------------------------- */
 function initCopyButtons() {
   const buttons = document.querySelectorAll('.btn-copy');
@@ -269,4 +195,33 @@ function initScrollSpy() {
       }
     });
   }, { passive: true });
+}
+
+/* --------------------------------------------------------------------------
+   8. SISTEMA DE SCROLL REVEAL (INTERSECTION OBSERVER)
+   -------------------------------------------------------------------------- */
+function initScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal');
+  if (!reveals.length) return;
+
+  // Fallback para navegadores sin soporte
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {
+    root: null,
+    rootMargin: '0px 0px -40px 0px',
+    threshold: 0.1
+  });
+
+  reveals.forEach(el => observer.observe(el));
 }

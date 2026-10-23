@@ -414,13 +414,152 @@ button, input, textarea {
    HERO SECTION (100% MOBILE-FIRST)
    ========================================================================== */
 .hero {
-  padding: 2.5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0 4.5rem;
   text-align: center;
 }
 
 @media (min-width: 768px) {
   .hero {
-    padding: 4.5rem 0 6rem;
+    padding: 5rem 0 6.5rem;
+  }
+}
+
+/* Fondo animado de código difuminado (Hero Stream) */
+.hero-code-bg {
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  opacity: 0.17;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.35) 60%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 45%, rgba(0, 0, 0, 0.95) 20%, rgba(0, 0, 0, 0.35) 60%, transparent 85%);
+  overflow: hidden;
+}
+
+.code-stream-row {
+  display: flex;
+  width: 100%;
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Consolas, Menlo, monospace;
+  font-size: clamp(0.72rem, 1.25vw, 0.88rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #64748b;
+  filter: blur(0.75px);
+  will-change: transform;
+}
+
+/* Diagonales sutiles para filas específicas (rotadas suavemente) */
+.code-stream-row.stream-diagonal-1 {
+  transform: rotate(-2.4deg) translateY(4px);
+}
+
+.code-stream-row.stream-diagonal-2 {
+  transform: rotate(2.2deg) translateY(-4px);
+}
+
+.code-track {
+  display: inline-flex;
+  gap: 2.8rem;
+  padding-right: 2.8rem;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Flujo de izquierda a derecha */
+.stream-ltr .code-track {
+  animation: codeStreamLtr 48s linear infinite;
+}
+
+.code-stream-row:nth-child(1) .code-track {
+  animation-duration: 44s;
+}
+
+.code-stream-row:nth-child(3) .code-track {
+  animation-duration: 52s;
+}
+
+.code-stream-row:nth-child(5) .code-track {
+  animation-duration: 40s;
+}
+
+/* Flujo de derecha a izquierda */
+.stream-rtl .code-track {
+  animation: codeStreamRtl 50s linear infinite;
+}
+
+.code-stream-row:nth-child(2) .code-track {
+  animation-duration: 56s;
+}
+
+.code-stream-row:nth-child(4) .code-track {
+  animation-duration: 46s;
+}
+
+@keyframes codeStreamLtr {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes codeStreamRtl {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Tokens y resaltado sutil de sintaxis */
+.code-track span {
+  display: inline-block;
+  opacity: 0.9;
+}
+
+.code-track .c-accent {
+  color: #22c55e;
+}
+
+.code-track .c-keyword {
+  color: #c084fc;
+}
+
+.code-track .c-fn {
+  color: #38bdf8;
+}
+
+.code-track .c-comment {
+  color: #475569;
+  font-style: italic;
+}
+
+.hero-content-wrap {
+  position: relative;
+  z-index: 2;
+  animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1329,6 +1468,10 @@ button, input, textarea {
   padding: 3.5rem 0 2rem;
 }
 
+.footer-brand {
+  margin-bottom: 2.2rem;
+}
+
 .footer-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1392,76 +1535,6 @@ button, input, textarea {
   }
 }
 
-/* ==========================================================================
-   MODAL DE CASO
-   ========================================================================== */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(10px);
-  z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.modal-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-sheet {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-medium);
-  border-radius: var(--radius-lg);
-  max-width: 620px;
-  width: 100%;
-  max-height: 88vh;
-  overflow-y: auto;
-  padding: 1.5rem;
-}
-
-@media (min-width: 600px) {
-  .modal-sheet {
-    padding: 2rem;
-  }
-}
-
-.modal-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-}
-
-.modal-close-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-sm);
-  color: var(--text-white);
-  padding: 0.4rem;
-  cursor: pointer;
-}
-
-.modal-img-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-bottom: 1.2rem;
-}
-
-.modal-img-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Botón Flotante de WhatsApp */
 .floating-wa {
   position: fixed;
@@ -1517,4 +1590,69 @@ button, input, textarea {
 .toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+
+/* ==========================================================================
+   SISTEMA DE MOTION & SCROLL REVEAL MODERNO
+   Efecto de aparición progresiva al desplazarse por la página
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Escalonamiento (Stagger) para tarjetas contiguas */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+
+/* Micro-interacciones de hover que conviven con la revelación */
+.card-project.is-visible:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.service-card.is-visible:hover {
+  transform: translateY(-5px);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.diff-card.is-visible:hover {
+  transform: translateY(-4px);
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.process-box.is-visible:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 197, 94, 0.35);
+}
+
+.metric-card-box.is-visible:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+/* Modo de movimiento reducido para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .hero-content-wrap {
+    animation: none !important;
+  }
+  .stream-ltr .code-track,
+  .stream-rtl .code-track {
+    animation: none !important;
+  }
 }
