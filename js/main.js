@@ -238,7 +238,7 @@ function initQuickContactForm() {
     if (biz) text += ` de "${biz}"`;
     text += `. Quería consultarte para crear mi web: ${msg}`;
 
-    const url = `https://wa.me/5491112345678?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/5491125739968?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   });
 }
