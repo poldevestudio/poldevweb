@@ -22,8 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Estilos Mobile-First -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Estilos Mobile-First (con control de versión para evitar caché en móviles) -->
+  <link rel="stylesheet" href="css/styles.css?v=2.1">
 </head>
 <body>
 
@@ -94,8 +94,8 @@
          ========================================================================== -->
     <section class="hero" id="inicio">
       <!-- Fondo animado con líneas de código flotantes y difuminadas -->
-      <div class="hero-code-bg" aria-hidden="true">
-        <div class="code-stream-row stream-ltr">
+      <div class="hero-code-bg" aria-hidden="true" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:1; opacity:0.12;">
+        <div class="code-stream-row stream-ltr" style="white-space:nowrap; font-family:monospace;">
           <div class="code-track">
             <span>&lt;section class="business" data-growth="140%"&gt;</span>
             <span class="c-accent">const localBusiness = await Poldev.create({ speed: "&lt;1s", mobileFirst: true });</span>
@@ -110,7 +110,7 @@
           </div>
         </div>
 
-        <div class="code-stream-row stream-rtl stream-diagonal-1">
+        <div class="code-stream-row stream-rtl stream-diagonal-1" style="white-space:nowrap; font-family:monospace;">
           <div class="code-track">
             <span class="c-fn">googleSearchIndex</span>({ maps: <span class="c-keyword">true</span>, localSeo: 100, verified: <span class="c-keyword">true</span> });
             <span>@media (max-width: 768px) { .mobile-layout { conversion: 100%; } }</span>
@@ -125,7 +125,7 @@
           </div>
         </div>
 
-        <div class="code-stream-row stream-ltr">
+        <div class="code-stream-row stream-ltr" style="white-space:nowrap; font-family:monospace;">
           <div class="code-track">
             <span class="c-keyword">const</span> ssl = { status: <span class="c-accent">"ACTIVE_HTTPS"</span>, protocol: <span class="c-accent">"TLS_1_3"</span> };
             <span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span>
@@ -140,7 +140,7 @@
           </div>
         </div>
 
-        <div class="code-stream-row stream-rtl stream-diagonal-2">
+        <div class="code-stream-row stream-rtl stream-diagonal-2" style="white-space:nowrap; font-family:monospace;">
           <div class="code-track">
             <span>git commit -m "feat: landing de alta conversion en produccion"</span>
             <span class="c-accent">const clients = ["Motos GMW", "Vivero Via Verde", "Almacen PH"];</span>
@@ -153,7 +153,7 @@
           </div>
         </div>
 
-        <div class="code-stream-row stream-ltr">
+        <div class="code-stream-row stream-ltr" style="white-space:nowrap; font-family:monospace;">
           <div class="code-track">
             <span class="c-comment">// Carga ultra veloz &lt;1s en redes 4G/5G</span>
             <span class="c-fn">window.addEventListener</span>("scroll", () => updateActiveExperience());
@@ -701,6 +701,6 @@
   <div class="toast" id="toastNotice">Copiado al portapapeles</div>
 
   <!-- JavaScript -->
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2.1"></script>
 </body>
 </html>
