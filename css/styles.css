@@ -748,9 +748,9 @@ button, input, textarea {
   }
 }
 
-@media (min-width: 1040px) {
+@media (min-width: 992px) {
   .services-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 

@@ -6,7 +6,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileDrawer();
   initPortfolioTabs();
-  initBudgetCalculator();
   initFaqAccordion();
   initCaseModal();
   initCopyButtons();
@@ -85,84 +84,7 @@ function initPortfolioTabs() {
 }
 
 /* --------------------------------------------------------------------------
-   3. CALCULADORA DE PRESUPUESTO EXPRESS
-   -------------------------------------------------------------------------- */
-function initBudgetCalculator() {
-  const planBtns = document.querySelectorAll('.plan-btn');
-  const addonRows = document.querySelectorAll('.addon-row');
-
-  const sumPlanName = document.getElementById('sumPlanName');
-  const sumTotal = document.getElementById('sumTotal');
-  const sumTime = document.getElementById('sumTime');
-  const waBtn = document.getElementById('btnWhatsappQuote');
-
-  if (!planBtns.length || !sumTotal) return;
-
-  const plans = {
-    institucional: { name: "Web Institucional", price: 180000, time: "5 a 7 días hábiles" },
-    landing: { name: "Landing Page", price: 130000, time: "3 a 5 días hábiles" },
-    ecommerce: { name: "Catálogo / Tienda", price: 240000, time: "10 a 14 días hábiles" }
-  };
-
-  const addons = {
-    maps_seo: { name: "Google Maps & Alta en Buscador", price: 35000 },
-    whatsapp_pro: { name: "Botón Flotante WhatsApp Pro", price: 20000 },
-    cloud_hosting: { name: "Hosting Cloud + SSL (1er Mes)", price: 25000 }
-  };
-
-  let activePlan = 'institucional';
-
-  planBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      planBtns.forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      activePlan = btn.dataset.plan;
-      calc();
-    });
-  });
-
-  addonRows.forEach(row => {
-    row.addEventListener('click', () => {
-      row.classList.toggle('active');
-      calc();
-    });
-  });
-
-  function calc() {
-    const plan = plans[activePlan];
-    let total = plan.price;
-    const selectedAddons = [];
-
-    addonRows.forEach(row => {
-      if (row.classList.contains('active')) {
-        const key = row.dataset.addon;
-        if (addons[key]) {
-          total += addons[key].price;
-          selectedAddons.push(addons[key].name);
-        }
-      }
-    });
-
-    const formattedPrice = `$${total.toLocaleString('es-AR')} ARS`;
-
-    sumPlanName.textContent = plan.name;
-    sumTotal.textContent = formattedPrice;
-    sumTime.textContent = plan.time;
-
-    const extrasText = selectedAddons.length > 0
-      ? ` con ${selectedAddons.join(', ')}`
-      : '';
-
-    const msg = `Hola Polo! Estuve cotizando en la web de POLDEV y me interesa el formato: ${plan.name}${extrasText}. Presupuesto estimado: ${formattedPrice}. ¿Podemos charlar detalles?`;
-
-    waBtn.href = `https://wa.me/5491112345678?text=${encodeURIComponent(msg)}`;
-  }
-
-  calc();
-}
-
-/* --------------------------------------------------------------------------
-   4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+   3. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
    -------------------------------------------------------------------------- */
 function initFaqAccordion() {
   const items = document.querySelectorAll('.faq-item');
@@ -191,7 +113,7 @@ function initFaqAccordion() {
 }
 
 /* --------------------------------------------------------------------------
-   5. MODAL DE CASO DE ESTUDIO
+   4. MODAL DE CASO DE ESTUDIO (3 PROYECTOS SELECCIONADOS)
    -------------------------------------------------------------------------- */
 const projectsData = {
   gmw: {
@@ -210,14 +132,6 @@ const projectsData = {
     challenge: "Consultas repetitivas en Instagram sobre especies disponibles, luz requerida y precios.",
     solution: "Un catálogo fotográfico optimizado en WebP donde los clientes pueden explorar especies con fichas de cuidados y solicitar pedidos por WhatsApp en un toque."
   },
-  danza: {
-    title: "Escuela Danza Julieta Sánchez",
-    category: "Academia de Danza",
-    img: "assets/projects/danza-hero.jpg",
-    summary: "Sitio web oficial para clases de ballet, danza clásica y acrobacia en tela en Escobar.",
-    challenge: "Los padres tenían dificultades para consultar la grilla horaria desde sus celulares en archivos PDF pesados.",
-    solution: "Plataforma estilizada con diseño editorial, grilla horaria interactiva y reserva directa de cupo para clases de prueba."
-  },
   almacen: {
     title: "Almacén PH — Comercio Barrial",
     category: "Comercio Minorista",
@@ -225,14 +139,6 @@ const projectsData = {
     summary: "Digitalización de almacén barrial tradicional con promociones semanales y mapa de ubicación.",
     challenge: "Llegada de nuevos vecinos al barrio que no sabían de la existencia del almacén ni cómo llegar.",
     solution: "One-Page ágil con geolocalización directa en Google Maps, fotos reales de la fachada y ofertas del día para pedidos rápidos."
-  },
-  maderar: {
-    title: "Maderar — Maderas & Construcción",
-    category: "Industria & Maderas",
-    img: "assets/projects/maderar-hero.jpg",
-    summary: "Catálogo técnico de tirantes, machimbres y vigas laminadas para carpinteros y constructores.",
-    challenge: "Demoras de días en responder consultas de medidas y cotizaciones para obras en curso.",
-    solution: "Catálogo con fichas de medidas técnicas y cotizador express que conecta con el WhatsApp mayorista en menos de 10 minutos."
   }
 };
 
@@ -281,7 +187,7 @@ function initCaseModal() {
 }
 
 /* --------------------------------------------------------------------------
-   6. BOTONES DE COPIADO
+   5. BOTONES DE COPIADO
    -------------------------------------------------------------------------- */
 function initCopyButtons() {
   const buttons = document.querySelectorAll('.btn-copy');
@@ -313,7 +219,7 @@ function initCopyButtons() {
 }
 
 /* --------------------------------------------------------------------------
-   7. FORMULARIO RÁPIDO DE CONTACTO
+   6. FORMULARIO RÁPIDO DE CONTACTO
    -------------------------------------------------------------------------- */
 function initQuickContactForm() {
   const form = document.getElementById('contactQuickForm');
@@ -338,7 +244,7 @@ function initQuickContactForm() {
 }
 
 /* --------------------------------------------------------------------------
-   8. SCROLLSPY ACTIVO
+   7. SCROLLSPY ACTIVO
    -------------------------------------------------------------------------- */
 function initScrollSpy() {
   const links = document.querySelectorAll('.nav-item');
