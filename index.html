@@ -3,435 +3,327 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>POLDEV Estudio | Páginas Web a Medida para Comercios y Negocios</title>
-  <meta name="description" content="Estudio de diseño y desarrollo web para comercios locales, pymes y emprendimientos. Sitios web ultrarrápidos, mobile-first, sin comisiones y con WhatsApp directo.">
+  <title>POLDEV Estudio | Páginas Web que Hacen Crecer tu Negocio</title>
+  <meta name="description" content="Estudio de desarrollo web para comercios, profesionales y pymes. Sitios modernos, ultrarrápidos y 100% responsivos con WhatsApp y Google Maps.">
   <meta name="author" content="POLDEV Estudio">
-  <meta name="theme-color" content="#07080c">
+  <meta name="theme-color" content="#090a0f">
 
-  <!-- Open Graph / Redes Sociales -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="POLDEV Estudio | Tu Negocio en Internet con Criterio Profesional">
-  <meta property="og:description" content="Páginas web a medida que convierten visitantes en clientes. Carga en <1s, Google Maps y WhatsApp integrado.">
+  <meta property="og:title" content="POLDEV Estudio | Tu Negocio en Internet">
+  <meta property="og:description" content="Páginas web a medida que convierten visitantes en clientes. Carga rápida y WhatsApp directo.">
   <meta property="og:image" content="assets/projects/gmw-hero.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <!-- Google Fonts: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Estilos del Sistema Neo-Precision -->
+  <!-- Estilos Mobile-First -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <!-- Accesibilidad: Saltar al contenido -->
-  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
-
-  <!-- Fondo Ambiental con Grilla y Gradientes Sutiles -->
-  <div class="bg-mesh-layer" aria-hidden="true">
-    <div class="mesh-blob-primary"></div>
-    <div class="mesh-blob-secondary"></div>
-    <div class="mesh-grid"></div>
-  </div>
-
-  <!-- Cursor Spotlight para Pantallas Grandes -->
-  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
-
   <!-- ==========================================================================
-       HEADER & NAVEGACIÓN PRINCIPAL
+       BARRA DE NAVEGACIÓN SUPERIOR
        ========================================================================== -->
   <header class="site-header" id="siteHeader">
-    <div class="container nav-container">
-      <!-- Logotipo Oficial -->
-      <a href="#inicio" class="brand-logo-link" aria-label="POLDEV Estudio - Inicio">
-        <img src="assets/logo/poldev-logo.svg" alt="POLDEV" class="brand-logo-img">
-        <span class="brand-pill-badge">Estudio</span>
+    <div class="container nav-wrap">
+      <!-- Logotipo -->
+      <a href="#inicio" class="brand-link" aria-label="POLDEV Estudio">
+        <img src="assets/logo/poldev-logo.svg" alt="POLDEV" class="brand-img">
+        <span class="brand-tag">Estudio</span>
       </a>
 
-      <!-- Navegación de Escritorio -->
-      <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#inicio" class="nav-link active">Inicio</a>
-        <a href="#proyectos" class="nav-link">Casos Reales <span class="nav-tag-badge">5</span></a>
-        <a href="#servicios" class="nav-link">Soluciones</a>
-        <a href="#calculadora" class="nav-link">Cotizador</a>
-        <a href="#por-que-poldev" class="nav-link">Diferenciales</a>
-        <a href="#faq" class="nav-link">FAQ</a>
+      <!-- Menú Escritorio -->
+      <nav class="nav-menu" aria-label="Principal">
+        <a href="#inicio" class="nav-item active">Inicio</a>
+        <a href="#proyectos" class="nav-item">Proyectos</a>
+        <a href="#servicios" class="nav-item">Soluciones</a>
+        <a href="#calculadora" class="nav-item">Cotizador</a>
+        <a href="#por-que-poldev" class="nav-item">Diferenciales</a>
+        <a href="#faq" class="nav-item">FAQ</a>
       </nav>
 
-      <!-- Botones de Acción -->
-      <div class="header-actions">
+      <!-- Botón de Acción & Hamburguesa -->
+      <div class="nav-actions">
         <a href="#calculadora" class="btn btn-primary btn-sm">
-          <span>Cotizar proyecto</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <span>Cotizar</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNavDrawer">
+        <button class="hamburger-btn" id="menuToggleBtn" aria-label="Abrir menú" aria-expanded="false">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Panel Menú Móvil -->
-  <div class="mobile-drawer-overlay" id="mobileDrawerOverlay"></div>
-  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Menú para celulares">
-    <div class="mobile-drawer-header">
-      <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:30px;">
-      <button class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Cerrar menú">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <!-- Menú Desplegable para Celulares -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:28px;">
+      <button class="drawer-close" id="drawerCloseBtn" aria-label="Cerrar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
       </button>
     </div>
 
-    <div class="mobile-nav-links">
-      <a href="#inicio" class="mobile-nav-link active">Inicio</a>
-      <a href="#proyectos" class="mobile-nav-link">Casos Reales</a>
-      <a href="#servicios" class="mobile-nav-link">Soluciones Web</a>
-      <a href="#calculadora" class="mobile-nav-link">Cotizador Express</a>
-      <a href="#por-que-poldev" class="mobile-nav-link">¿Por qué Elegirnos?</a>
-      <a href="#proceso" class="mobile-nav-link">Paso a Paso</a>
-      <a href="#faq" class="mobile-nav-link">Preguntas Frecuentes</a>
-      <a href="#contacto" class="mobile-nav-link">Contacto Directo</a>
+    <div class="drawer-links">
+      <a href="#inicio" class="drawer-link active">Inicio</a>
+      <a href="#proyectos" class="drawer-link">Proyectos Reales</a>
+      <a href="#servicios" class="drawer-link">Soluciones Web</a>
+      <a href="#calculadora" class="drawer-link">Cotizador Express</a>
+      <a href="#por-que-poldev" class="drawer-link">¿Por qué Elegirnos?</a>
+      <a href="#proceso" class="drawer-link">Paso a Paso</a>
+      <a href="#faq" class="drawer-link">Preguntas Frecuentes</a>
+      <a href="#contacto" class="drawer-link">Contacto Directo</a>
     </div>
 
-    <div class="mobile-drawer-footer">
-      <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Quiero%20hacer%20una%20consulta%20por%20una%20web" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+    <div class="drawer-footer">
+      <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Quiero%20hacer%20una%20consulta%20por%20una%20web" class="btn btn-whatsapp" style="width:100%;" target="_blank" rel="noopener noreferrer">
         <span>Hablar por WhatsApp</span>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <span style="font-size:0.75rem; color:var(--text-muted); text-align:center;">Buenos Aires • Atención a todo el país</span>
     </div>
   </aside>
 
-  <!-- Contenido Principal -->
-  <main id="main-content">
-
+  <main>
     <!-- ==========================================================================
-         HERO SECTION
+         HERO SECTION (DISEÑADA PARA SMARTPHONES)
          ========================================================================== -->
-    <section class="hero-section" id="inicio">
+    <section class="hero" id="inicio">
       <div class="container">
-        <div class="hero-layout-grid">
-          
-          <!-- Columna Izquierda: Mensaje Central & Propuesta de Valor -->
-          <div class="hero-copy-column">
-            <div class="hero-availability-pill">
-              <span class="status-beacon-dot"></span>
-              <span>Disponibilidad inmediata para nuevos comercios</span>
-            </div>
-
-            <h1 class="hero-main-title">
-              Páginas web a medida que <span class="gradient-text">convierten visitas en clientes</span>.
-            </h1>
-
-            <p class="hero-lead-text">
-              Diseñamos y programamos sitios web modernos, ultrarrápidos y adaptados a celulares para comercios barriales, profesionales y pymes. Sin comisiones mensuales por venta, con dominio propio y WhatsApp directo.
-            </p>
-
-            <div class="hero-cta-cluster">
-              <a href="#calculadora" class="btn btn-primary btn-lg">
-                <span>Calcular presupuesto express</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-              </a>
-              <a href="#proyectos" class="btn btn-outline btn-lg">
-                <span>Ver portfolio en vivo</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
-              </a>
-            </div>
-
-            <!-- Fila de Ventajas Reales -->
-            <div class="hero-perks-row">
-              <div class="hero-perk-item">
-                <div class="hero-perk-icon">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                </div>
-                <span>Carga récord en menos de 1.2 segundos</span>
-              </div>
-              <div class="hero-perk-item">
-                <div class="hero-perk-icon">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
-                </div>
-                <span>100% Mobile-First para celulares</span>
-              </div>
-              <div class="hero-perk-item">
-                <div class="hero-perk-icon">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                </div>
-                <span>Google Maps & Posicionamiento Local</span>
-              </div>
-              <div class="hero-perk-item">
-                <div class="hero-perk-icon">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                </div>
-                <span>Atención directa por WhatsApp con Polo</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Columna Derecha: Dispositivo Interactivo con Proyectos Reales -->
-          <div class="hero-showcase-column">
-            <div class="studio-showcase-card">
-              <!-- Barra Superior del Navegador -->
-              <div class="showcase-window-header">
-                <div class="window-dots-cluster">
-                  <span class="window-circle-dot dot-red"></span>
-                  <span class="window-circle-dot dot-amber"></span>
-                  <span class="window-circle-dot dot-green"></span>
-                </div>
-                <div class="window-url-bar">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                  <span id="showcaseUrl">gmwmotos.com.ar</span>
-                </div>
-                <div class="window-badge-status">
-                  <span class="status-beacon-dot" style="width:6px; height:6px;"></span>
-                  <span>EN PRODUCCIÓN</span>
-                </div>
-              </div>
-
-              <!-- Pestañas de Proyectos del Estudio -->
-              <div class="showcase-tabs-nav">
-                <button type="button" class="showcase-tab-trigger active" data-project="gmw">Motos GMW</button>
-                <button type="button" class="showcase-tab-trigger" data-project="vivero">Vivero Vía Verde</button>
-                <button type="button" class="showcase-tab-trigger" data-project="danza">Danza Sánchez</button>
-                <button type="button" class="showcase-tab-trigger" data-project="almacen">Almacén PH</button>
-                <button type="button" class="showcase-tab-trigger" data-project="maderar">Maderar</button>
-              </div>
-
-              <!-- Pantalla de Previsualización -->
-              <div class="showcase-screen-viewport">
-                <img src="assets/projects/gmw-hero.jpg" alt="Preview Motos GMW" class="showcase-project-img" id="showcaseImg">
-                <div class="showcase-screen-scrim">
-                  <span class="showcase-tag-pill" id="showcaseTag">Taller Mecánico & Repuestos</span>
-                  <h3 class="showcase-project-title" id="showcaseTitle">Motos GMW</h3>
-                  <p class="showcase-project-desc" id="showcaseDesc">Digitalización completa de taller oficial con agenda de turnos y catálogo de repuestos multimarca.</p>
-                  <div class="showcase-meta-row">
-                    <span class="showcase-metric-badge" id="showcaseMetric">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                      +140% consultas por WhatsApp
-                    </span>
-                    <button type="button" class="showcase-inspect-btn" id="showcaseInspectBtn" data-target="gmw">Ver caso completo</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Sello Flotante de Garantía -->
-            <div class="studio-floating-stamp">
-              <div class="stamp-icon-box">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <div class="stamp-text-group">
-                <strong>Código 100% Propietario</strong>
-                <span>Entregas llave en mano listas para operar</span>
-              </div>
-            </div>
-          </div>
-
+        <!-- Indicador de Disponibilidad -->
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          <span>Aceptando nuevos comercios este mes</span>
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================================================
-         MÉTRICAS & SOCIAL PROOF STRIP
-         ========================================================================== -->
-    <section class="proof-strip-section" aria-label="Métricas del estudio">
-      <div class="container">
-        <div class="proof-metrics-grid">
-          <div class="proof-metric-card">
-            <div class="metric-big-num gradient-text">+5</div>
-            <div class="metric-main-label">Proyectos en Producción</div>
-            <div class="metric-sub-label">Comercios y pymes barriales activas</div>
+        <h1 class="hero-title">
+          Páginas web a medida que <span class="gradient-text">hacen crecer tu negocio</span>.
+        </h1>
+
+        <p class="hero-sub">
+          Diseñamos sitios modernos, ultrarrápidos y 100% pensados para celulares. Tu local visible en Google Maps, pedidos directo a tu WhatsApp y código propio sin comisiones mensuales.
+        </p>
+
+        <!-- Botones de Acción -->
+        <div class="hero-ctas">
+          <a href="#calculadora" class="btn btn-primary">
+            <span>Calcular presupuesto express</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#proyectos" class="btn btn-outline">
+            <span>Ver trabajos reales</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+        </div>
+
+        <!-- Fila de Garantías Clave -->
+        <div class="hero-badges-row">
+          <div class="badge-item">
+            <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <span>Carga en &lt; 1 segundo</span>
           </div>
-          <div class="proof-metric-card">
-            <div class="metric-big-num gradient-text">&lt; 1.2s</div>
-            <div class="metric-main-label">Velocidad en Redes 4G/5G</div>
-            <div class="metric-sub-label">Google Lighthouse Score 98+</div>
+          <div class="badge-item">
+            <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            <span>100% Mobile-First</span>
           </div>
-          <div class="proof-metric-card">
-            <div class="metric-big-num gradient-text">100%</div>
-            <div class="metric-main-label">Diseño Mobile-First</div>
-            <div class="metric-sub-label">Optimizado para todos los smartphones</div>
+          <div class="badge-item">
+            <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Google Maps y SEO</span>
           </div>
-          <div class="proof-metric-card">
-            <div class="metric-big-num gradient-text">0%</div>
-            <div class="metric-main-label">Comisiones Ocultas</div>
-            <div class="metric-sub-label">Sos dueño total de tu web y dominio</div>
+          <div class="badge-item">
+            <svg class="badge-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            <span>WhatsApp Directo</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         PORTFOLIO (CASOS REALES)
+         MÉTRICAS / PRUEBA SOCIAL
+         ========================================================================== -->
+    <div class="metrics-strip">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card-box">
+            <div class="metric-val gradient-text">+5</div>
+            <div class="metric-label">Comercios en Producción</div>
+            <div class="metric-desc">Sitios reales en línea</div>
+          </div>
+          <div class="metric-card-box">
+            <div class="metric-val gradient-text">&lt; 1s</div>
+            <div class="metric-label">Velocidad Móvil</div>
+            <div class="metric-desc">Rápido en 4G y 5G</div>
+          </div>
+          <div class="metric-card-box">
+            <div class="metric-val gradient-text">100%</div>
+            <div class="metric-label">Código Propietario</div>
+            <div class="metric-desc">Sos dueño de tu web</div>
+          </div>
+          <div class="metric-card-box">
+            <div class="metric-val gradient-text">0%</div>
+            <div class="metric-label">Comisiones de Venta</div>
+            <div class="metric-desc">Sin costos ocultos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         PORTFOLIO (CASOS REALES LIMPIOS)
          ========================================================================== -->
     <section class="section" id="proyectos">
       <div class="container">
         <div class="section-header">
           <span class="section-eyebrow">Portfolio Seleccionado</span>
-          <h2 class="section-title">Trabajos reales para comercios que crecen</h2>
-          <p class="section-subtitle">
-            Sin maquetas de fantasía. Cada uno de estos sitios web resuelve las necesidades reales de su dueño: atraer consultas, mostrar productos y cerrar ventas por WhatsApp.
+          <h2 class="section-title">Trabajos reales para negocios locales</h2>
+          <p class="section-desc">
+            Cada sitio está diseñado para solucionar un problema concreto: turnos, catálogo de productos y pedidos al paso.
           </p>
         </div>
 
-        <!-- Filtros por Categoría -->
-        <div class="portfolio-filters-row">
-          <button type="button" class="filter-pill-btn active" data-filter="all">Todos los proyectos</button>
-          <button type="button" class="filter-pill-btn" data-filter="comercio">Comercios de Barrio</button>
-          <button type="button" class="filter-pill-btn" data-filter="taller">Talleres & Industria</button>
-          <button type="button" class="filter-pill-btn" data-filter="educacion">Educación & Arte</button>
+        <!-- Filtros -->
+        <div class="portfolio-tabs">
+          <button class="tab-btn active" data-filter="all">Todos</button>
+          <button class="tab-btn" data-filter="comercio">Comercios de Barrio</button>
+          <button class="tab-btn" data-filter="taller">Talleres & Industria</button>
+          <button class="tab-btn" data-filter="educacion">Educación & Arte</button>
         </div>
 
-        <!-- Grilla de Tarjetas de Proyectos -->
-        <div class="portfolio-cards-grid">
+        <!-- Feed de Tarjetas -->
+        <div class="projects-feed">
 
           <!-- 1. MOTOS GMW -->
-          <article class="project-case-card" data-category="taller">
-            <div class="project-thumbnail-box">
-              <img src="assets/projects/gmw-fachada.jpg" alt="Motos GMW Taller" class="project-thumbnail-img">
-              <div class="project-logo-stamp">
+          <article class="card-project" data-category="taller">
+            <div class="card-media-wrap">
+              <img src="assets/projects/gmw-fachada.jpg" alt="Motos GMW" class="card-img" loading="lazy">
+              <div class="card-logo-float">
                 <img src="assets/projects/gmw-logo.png" alt="Logo Motos GMW">
               </div>
-              <span class="project-category-badge">Taller & Repuestos</span>
+              <span class="card-rubro-pill">Taller & Repuestos</span>
             </div>
-            <div class="project-details-body">
-              <h3 class="project-heading">Motos GMW</h3>
-              <p class="project-summary">
-                Taller mecánico especializado y venta de repuestos multimarca (Honda, Yamaha, Motomel). Permite solicitar turnos de service y consultar stock directo al WhatsApp del mecánico.
+            <div class="card-content">
+              <h3 class="card-name">Motos GMW</h3>
+              <p class="card-text">
+                Taller mecánico oficial y venta de repuestos multimarcas con solicitud de turnos online y catálogo de servicios directos a WhatsApp.
               </p>
-              <div class="project-tags-cloud">
-                <span class="project-tech-chip">HTML5 Semántico</span>
-                <span class="project-tech-chip">WhatsApp API</span>
-                <span class="project-tech-chip">Google Maps</span>
-                <span class="project-tech-chip">SEO Local</span>
+              <div class="card-tags">
+                <span class="tag-mini">WhatsApp API</span>
+                <span class="tag-mini">Google Maps</span>
+                <span class="tag-mini">SEO Local</span>
               </div>
-              <div class="project-card-footer">
-                <div class="project-metric-result">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                  <span>+140% consultas por WhatsApp</span>
-                </div>
-                <button type="button" class="btn btn-outline btn-sm btn-open-modal" data-project="gmw">Ver caso</button>
+              <div class="card-foot">
+                <span class="card-metric">+140% consultas directas</span>
+                <button class="btn btn-outline btn-sm btn-modal" data-project="gmw">Ver caso</button>
               </div>
             </div>
           </article>
 
           <!-- 2. VIVERO VÍA VERDE -->
-          <article class="project-case-card" data-category="comercio">
-            <div class="project-thumbnail-box">
-              <img src="assets/projects/vivero-hero.jpg" alt="Vivero Vía Verde" class="project-thumbnail-img">
-              <div class="project-logo-stamp">
+          <article class="card-project" data-category="comercio">
+            <div class="card-media-wrap">
+              <img src="assets/projects/vivero-hero.jpg" alt="Vivero Vía Verde" class="card-img" loading="lazy">
+              <div class="card-logo-float">
                 <img src="assets/projects/vivero-logo.png" alt="Logo Vivero Vía Verde">
               </div>
-              <span class="project-category-badge">Plantas & Jardinería</span>
+              <span class="card-rubro-pill">Jardinería & Plantas</span>
             </div>
-            <div class="project-details-body">
-              <h3 class="project-heading">Vivero Vía Verde</h3>
-              <p class="project-summary">
-                Catálogo botánico visual de plantas de interior, exterior e insumos de cultivo. Los clientes recorren especies disponibles y coordinan pedidos con asesoría personalizada.
+            <div class="card-content">
+              <h3 class="card-name">Vivero Vía Verde</h3>
+              <p class="card-text">
+                Catálogo botánico visual de plantas de interior y exterior con fichas de cuidados y pedidos personalizados de asesoramiento.
               </p>
-              <div class="project-tags-cloud">
-                <span class="project-tech-chip">Catálogo Visual</span>
-                <span class="project-tech-chip">Optimización WebP</span>
-                <span class="project-tech-chip">Mobile-First</span>
-                <span class="project-tech-chip">Filtro Especies</span>
+              <div class="card-tags">
+                <span class="tag-mini">Catálogo Visual</span>
+                <span class="tag-mini">Optimización WebP</span>
+                <span class="tag-mini">Mobile First</span>
               </div>
-              <div class="project-card-footer">
-                <div class="project-metric-result">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                  <span>50+ especies exhibidas</span>
-                </div>
-                <button type="button" class="btn btn-outline btn-sm btn-open-modal" data-project="vivero">Ver caso</button>
+              <div class="card-foot">
+                <span class="card-metric">50+ especies exhibidas</span>
+                <button class="btn btn-outline btn-sm btn-modal" data-project="vivero">Ver caso</button>
               </div>
             </div>
           </article>
 
-          <!-- 3. DANZA JULIETA SÁNCHEZ -->
-          <article class="project-case-card" data-category="educacion">
-            <div class="project-thumbnail-box">
-              <img src="assets/projects/danza-hero.jpg" alt="Escuela Danza Julieta Sánchez" class="project-thumbnail-img">
-              <div class="project-logo-stamp">
-                <img src="assets/projects/danza-logo.png" alt="Logo Danza Julieta Sánchez">
+          <!-- 3. ESCUELA DANZA SÁNCHEZ -->
+          <article class="card-project" data-category="educacion">
+            <div class="card-media-wrap">
+              <img src="assets/projects/danza-hero.jpg" alt="Escuela Danza Sánchez" class="card-img" loading="lazy">
+              <div class="card-logo-float">
+                <img src="assets/projects/danza-logo.png" alt="Logo Danza Sánchez">
               </div>
-              <span class="project-category-badge">Academia de Danza</span>
+              <span class="card-rubro-pill">Academia & Danza</span>
             </div>
-            <div class="project-details-body">
-              <h3 class="project-heading">Escuela Danza Julieta Sánchez</h3>
-              <p class="project-summary">
-                Sitio institucional con estética editorial para clases de danza clásica, acrobacia en tela y gimnasia artística en Escobar. Grilla interactiva de horarios e inscripción online.
+            <div class="card-content">
+              <h3 class="card-name">Escuela Julieta Sánchez</h3>
+              <p class="card-text">
+                Sitio institucional con grilla interactiva de horarios para clases de ballet, acrobacia en tela y reserva directa de cupos.
               </p>
-              <div class="project-tags-cloud">
-                <span class="project-tech-chip">Diseño Editorial</span>
-                <span class="project-tech-chip">Grilla de Horarios</span>
-                <span class="project-tech-chip">Formulario Ágil</span>
-                <span class="project-tech-chip">SSL Seguro</span>
+              <div class="card-tags">
+                <span class="tag-mini">Diseño Editorial</span>
+                <span class="tag-mini">Grilla Horarios</span>
+                <span class="tag-mini">Inscripción Ágil</span>
               </div>
-              <div class="project-card-footer">
-                <div class="project-metric-result">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                  <span>80+ inscripciones gestionadas</span>
-                </div>
-                <button type="button" class="btn btn-outline btn-sm btn-open-modal" data-project="danza">Ver caso</button>
+              <div class="card-foot">
+                <span class="card-metric">80+ inscripciones</span>
+                <button class="btn btn-outline btn-sm btn-modal" data-project="danza">Ver caso</button>
               </div>
             </div>
           </article>
 
           <!-- 4. ALMACÉN PH -->
-          <article class="project-case-card" data-category="comercio">
-            <div class="project-thumbnail-box">
-              <img src="assets/projects/almacen-fachada.jpg" alt="Almacén PH" class="project-thumbnail-img">
-              <div class="project-logo-stamp">
+          <article class="card-project" data-category="comercio">
+            <div class="card-media-wrap">
+              <img src="assets/projects/almacen-fachada.jpg" alt="Almacén PH" class="card-img" loading="lazy">
+              <div class="card-logo-float">
                 <img src="assets/projects/almacen-logo.png" alt="Logo Almacén PH">
               </div>
-              <span class="project-category-badge">Comercio Minorista</span>
+              <span class="card-rubro-pill">Comercio Minorista</span>
             </div>
-            <div class="project-details-body">
-              <h3 class="project-heading">Almacén PH</h3>
-              <p class="project-summary">
-                Digitalización del almacén de barrio: historia vecinal, fotos reales de la fachada, promociones semanales y mapa de geolocalización para que nuevos residentes los encuentren al paso.
+            <div class="card-content">
+              <h3 class="card-name">Almacén PH</h3>
+              <p class="card-text">
+                Digitalización del almacén de barrio: fachada real, promociones semanales y ubicación precisa en Google Maps para nuevos vecinos.
               </p>
-              <div class="project-tags-cloud">
-                <span class="project-tech-chip">One-Page Ágil</span>
-                <span class="project-tech-chip">Ficha Google Maps</span>
-                <span class="project-tech-chip">Ofertas Semanales</span>
-                <span class="project-tech-chip">Carga &lt;1 seg</span>
+              <div class="card-tags">
+                <span class="tag-mini">One-Page Rápida</span>
+                <span class="tag-mini">Google Maps</span>
+                <span class="tag-mini">Ofertas del Día</span>
               </div>
-              <div class="project-card-footer">
-                <div class="project-metric-result">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                  <span>Geolocalización barrial</span>
-                </div>
-                <button type="button" class="btn btn-outline btn-sm btn-open-modal" data-project="almacen">Ver caso</button>
+              <div class="card-foot">
+                <span class="card-metric">Geolocalización barrial</span>
+                <button class="btn btn-outline btn-sm btn-modal" data-project="almacen">Ver caso</button>
               </div>
             </div>
           </article>
 
           <!-- 5. MADERAR -->
-          <article class="project-case-card" data-category="taller">
-            <div class="project-thumbnail-box">
-              <img src="assets/projects/maderar-hero.jpg" alt="Maderar Maderas" class="project-thumbnail-img">
-              <div class="project-logo-stamp">
+          <article class="card-project" data-category="taller">
+            <div class="card-media-wrap">
+              <img src="assets/projects/maderar-hero.jpg" alt="Maderar" class="card-img" loading="lazy">
+              <div class="card-logo-float">
                 <img src="assets/projects/maderar-logo.png" alt="Logo Maderar">
               </div>
-              <span class="project-category-badge">Industria & Construcción</span>
+              <span class="card-rubro-pill">Industria & Construcción</span>
             </div>
-            <div class="project-details-body">
-              <h3 class="project-heading">Maderar Maderas</h3>
-              <p class="project-summary">
-                Catálogo técnico de tirantes, machimbres, vigas laminadas y aislaciones térmicas. Diseñado para constructores y carpinteros que necesitan especificaciones y cotizaciones inmediatas.
+            <div class="card-content">
+              <h3 class="card-name">Maderar Maderas</h3>
+              <p class="card-text">
+                Catálogo técnico de tirantes, machimbres y vigas laminadas con cotizador express directo al WhatsApp para constructores y carpinteros.
               </p>
-              <div class="project-tags-cloud">
-                <span class="project-tech-chip">Catálogo Técnico</span>
-                <span class="project-tech-chip">Cotizador Express</span>
-                <span class="project-tech-chip">Atención Mayorista</span>
-                <span class="project-tech-chip">CDN Rápido</span>
+              <div class="card-tags">
+                <span class="tag-mini">Catálogo Técnico</span>
+                <span class="tag-mini">Cotizador WhatsApp</span>
+                <span class="tag-mini">CDN Cloud</span>
               </div>
-              <div class="project-card-footer">
-                <div class="project-metric-result">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-                  <span>Cotizaciones en &lt;10min</span>
-                </div>
-                <button type="button" class="btn btn-outline btn-sm btn-open-modal" data-project="maderar">Ver caso</button>
+              <div class="card-foot">
+                <span class="card-metric">Cotizaciones en &lt;10min</span>
+                <button class="btn btn-outline btn-sm btn-modal" data-project="maderar">Ver caso</button>
               </div>
             </div>
           </article>
@@ -441,88 +333,88 @@
     </section>
 
     <!-- ==========================================================================
-         SERVICES & BENTO SOLUTIONS
+         SOLUCIONES Y PLANES
          ========================================================================== -->
-    <section class="section" id="servicios" style="background: rgba(13, 15, 23, 0.45);">
+    <section class="section" id="servicios" style="background: rgba(16, 18, 26, 0.45);">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Soluciones a Medida</span>
-          <h2 class="section-title">Todo lo que tu negocio necesita, llave en mano</h2>
-          <p class="section-subtitle">
-            Sin configuraciones engorrosas ni tecnicismos innecesarios. Nos encargamos de la parte técnica de punta a punta para que vos atiendas tu negocio.
+          <span class="section-eyebrow">Soluciones Claras</span>
+          <h2 class="section-title">Planes pensados para la realidad de tu local</h2>
+          <p class="section-desc">
+            Sin suscripciones forzadas ni comisiones por venta. Soluciones llave en mano listas para operar.
           </p>
         </div>
 
-        <div class="services-bento-grid">
-          <!-- Servicio 1: Institucional -->
-          <div class="bento-service-card featured">
-            <span class="service-featured-ribbon">Más Elegido</span>
-            <div class="service-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        <div class="services-grid">
+          <!-- 1. Institucional -->
+          <div class="service-card highlight">
+            <span class="service-badge-pop">Más Elegido</span>
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
             </div>
-            <h3 class="service-title">Web Comercial & Institucional</h3>
-            <p class="service-text">
-              Tu local abierto 24/7 en internet con dominio propio. Ideal para talleres, viveros, almacenes y servicios que buscan transmitir seriedad y cercanía.
+            <h3 class="service-name">Web Institucional & Local</h3>
+            <p class="service-desc">
+              Tu local abierto 24/7 en Google. Ideal para talleres, almacenes, viveros y comercios que quieren presencia formal.
             </p>
-            <ul class="service-perks-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dominio propio (.com / .com.ar)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% Adaptada a celulares</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Botón flotante a WhatsApp directo</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Google Maps y horarios de atención</li>
+            <ul class="service-items">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Dominio propio (.com / .com.ar)</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 100% Adaptada a celulares</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Botón flotante a WhatsApp</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Google Maps y horarios</li>
             </ul>
             <a href="#calculadora" class="btn btn-outline btn-sm" style="margin-top:auto;">Cotizar este plan</a>
           </div>
 
-          <!-- Servicio 2: Landing Page -->
-          <div class="bento-service-card">
-            <div class="service-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <!-- 2. Landing -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             </div>
-            <h3 class="service-title">Landing Page de Conversión</h3>
-            <p class="service-text">
-              Páginas de aterrizaje diseñadas con un solo objetivo: captar consultas inmediatas para promociones puntuales, eventos o campañas de publicidad.
+            <h3 class="service-name">Landing Page Rápida</h3>
+            <p class="service-desc">
+              Página de una sola sección enfocada en conseguir clientes para una promoción puntual o anuncio en Instagram.
             </p>
-            <ul class="service-perks-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Entrega récord (3 a 5 días)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Diseño persuasivo y llamados a la acción</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Formularios ágiles de contacto</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Lista para anuncios en Instagram / Google</li>
+            <ul class="service-items">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Entrega récord (3 a 5 días)</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Redacción y llamados a la acción</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Formularios ágiles</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Lista para anuncios Meta Ads</li>
             </ul>
             <a href="#calculadora" class="btn btn-outline btn-sm" style="margin-top:auto;">Cotizar este plan</a>
           </div>
 
-          <!-- Servicio 3: Catálogo / E-Commerce -->
-          <div class="bento-service-card">
-            <div class="service-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <!-- 3. Catálogo -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             </div>
-            <h3 class="service-title">Catálogo & E-Commerce Ágil</h3>
-            <p class="service-text">
-              Mostrá tus artículos con fotos, variantes y precios claros. Carrito simple que envía el pedido listo al WhatsApp o cobra por Mercado Pago.
+            <h3 class="service-name">Catálogo & Tienda</h3>
+            <p class="service-desc">
+              Mostrá tus artículos con fotos, variantes y precios claros. Carrito ágil con pedidos directos a tu WhatsApp.
             </p>
-            <ul class="service-perks-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Carrito interactivo sin pasos molestos</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pedidos detallados directo a tu celular</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cobro opcional con Mercado Pago</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Sin comisiones por venta</li>
+            <ul class="service-items">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Carrito sin registros molestos</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Pedidos armados a tu celular</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cobro opcional por Mercado Pago</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cero comisión por ventas</li>
             </ul>
             <a href="#calculadora" class="btn btn-outline btn-sm" style="margin-top:auto;">Cotizar este plan</a>
           </div>
 
-          <!-- Servicio 4: Abono & Hosting -->
-          <div class="bento-service-card">
-            <div class="service-icon-wrapper">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <!-- 4. Abono -->
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h3 class="service-title">Abono de Mantenimiento & Cloud</h3>
-            <p class="service-text">
-              La tranquilidad de que tu sitio nunca se caiga ni quede desactualizado. Servidores cloud de alta velocidad, certificado SSL y cambios mensuales incluidos.
+            <h3 class="service-name">Abono & Hosting Cloud</h3>
+            <p class="service-desc">
+              La tranquilidad de que tu web siempre funcione. Servidor ultrarrápido, certificado SSL y cambios mensuales incluidos.
             </p>
-            <ul class="service-perks-list">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Servidores Cloud CDN de alta velocidad</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Certificado de seguridad SSL (candadito verde)</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Actualización de fotos y precios por WhatsApp</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Copias de respaldo continuas</li>
+            <ul class="service-items">
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Servidor Cloud CDN de alta velocidad</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Certificado SSL (candado verde)</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Cambios de precios por WhatsApp</li>
+              <li><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Copias de seguridad automáticas</li>
             </ul>
             <a href="#contacto" class="btn btn-outline btn-sm" style="margin-top:auto;">Consultar abono</a>
           </div>
@@ -531,131 +423,126 @@
     </section>
 
     <!-- ==========================================================================
-         CALCULADORA DE PRESUPUESTO EXPRESS
+         COTIZADOR EXPRESS (MÓVIL FRIENDLY)
          ========================================================================== -->
     <section class="section" id="calculadora">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Transparencia Total</span>
+          <span class="section-eyebrow">Presupuesto en Vivo</span>
           <h2 class="section-title">Calculadora de Presupuesto Express</h2>
-          <p class="section-subtitle">
-            Seleccioná el formato de sitio que necesitás y los módulos opcionales. Obtené un valor de referencia al instante para charlar por WhatsApp.
+          <p class="section-desc">
+            Elegí las opciones que necesitás. Te damos un valor de referencia al instante y podés enviarlo por WhatsApp con un solo clic.
           </p>
         </div>
 
-        <div class="budget-calculator-wrapper">
-          <!-- Columna Opciones y Pasos -->
-          <div class="calc-options-col">
+        <div class="calc-card">
+          <!-- Columna Pasos -->
+          <div>
             <!-- Paso 1 -->
-            <div>
-              <div class="calc-group-title">
-                <span class="step-circle-badge">1</span>
-                <span>Elegí el formato de tu web:</span>
-              </div>
-              <div class="plan-selectors-grid">
-                <button type="button" class="plan-radio-card selected" data-plan="institucional">
-                  <div class="plan-card-name">Institucional & Comercio</div>
-                  <div class="plan-card-desc">Catálogo, mapa, WhatsApp y presentación formal del negocio.</div>
-                </button>
-                <button type="button" class="plan-radio-card" data-plan="landing">
-                  <div class="plan-card-name">Landing Page Ágil</div>
-                  <div class="plan-card-desc">Página de alta conversión para promociones específicas.</div>
-                </button>
-                <button type="button" class="plan-radio-card" data-plan="ecommerce">
-                  <div class="plan-card-name">Catálogo / Tienda</div>
-                  <div class="plan-card-desc">Carrito de pedidos y cobro online directo.</div>
-                </button>
-              </div>
+            <div class="calc-section-title">
+              <span class="calc-step-tag">1</span>
+              <span>Elegí el formato de tu web:</span>
+            </div>
+
+            <div class="plan-grid">
+              <button type="button" class="plan-btn selected" data-plan="institucional">
+                <div class="plan-btn-title">Institucional</div>
+                <div class="plan-btn-desc">Catálogo, mapa, WhatsApp y presentación.</div>
+              </button>
+              <button type="button" class="plan-btn" data-plan="landing">
+                <div class="plan-btn-title">Landing Page</div>
+                <div class="plan-btn-desc">Página ágil para captar consultas directas.</div>
+              </button>
+              <button type="button" class="plan-btn" data-plan="ecommerce">
+                <div class="plan-btn-title">Catálogo / Tienda</div>
+                <div class="plan-btn-desc">Carrito de pedidos y cobro online.</div>
+              </button>
             </div>
 
             <!-- Paso 2 -->
-            <div>
-              <div class="calc-group-title">
-                <span class="step-circle-badge">2</span>
-                <span>Módulos y servicios opcionales:</span>
+            <div class="calc-section-title">
+              <span class="calc-step-tag">2</span>
+              <span>Adicionales opcionales:</span>
+            </div>
+
+            <div class="addons-stack">
+              <div class="addon-row active" data-addon="maps_seo">
+                <div class="addon-info-wrap">
+                  <div class="addon-chk">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                  </div>
+                  <div>
+                    <div class="addon-label-main">Google Maps & Alta en Buscador</div>
+                    <div class="addon-label-sub">Para que tu local aparezca en búsquedas zonales</div>
+                  </div>
+                </div>
+                <span class="addon-badge-price">+$35.000</span>
               </div>
-              <div class="calc-addons-stack">
-                <label class="addon-checkbox-label checked">
-                  <input type="checkbox" class="addon-checkbox-input" value="maps_seo" checked>
-                  <div class="addon-left-box">
-                    <div class="addon-custom-check">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div>
-                      <div class="addon-info-title">Google Maps & Alta en Google Search</div>
-                      <div class="addon-info-desc">Para que tu local aparezca en búsquedas de tu barrio</div>
-                    </div>
-                  </div>
-                  <span class="addon-price-badge">+$35.000</span>
-                </label>
 
-                <label class="addon-checkbox-label checked">
-                  <input type="checkbox" class="addon-checkbox-input" value="whatsapp_pro" checked>
-                  <div class="addon-left-box">
-                    <div class="addon-custom-check">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div>
-                      <div class="addon-info-title">Botón Flotante con Mensajes Pre-redactados</div>
-                      <div class="addon-info-desc">Abre WhatsApp con el pedido o consulta ya redactada</div>
-                    </div>
+              <div class="addon-row active" data-addon="whatsapp_pro">
+                <div class="addon-info-wrap">
+                  <div class="addon-chk">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="addon-price-badge">+$20.000</span>
-                </label>
+                  <div>
+                    <div class="addon-label-main">Botón Flotante con Textos Automáticos</div>
+                    <div class="addon-label-sub">Abre WhatsApp con el mensaje ya redactado</div>
+                  </div>
+                </div>
+                <span class="addon-badge-price">+$20.000</span>
+              </div>
 
-                <label class="addon-checkbox-label">
-                  <input type="checkbox" class="addon-checkbox-input" value="cloud_hosting">
-                  <div class="addon-left-box">
-                    <div class="addon-custom-check">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-                    </div>
-                    <div>
-                      <div class="addon-info-title">Hosting Cloud Rápido + SSL + 1er Mes de Abono</div>
-                      <div class="addon-info-desc">Alojamiento de máxima velocidad y mantenimiento inicial</div>
-                    </div>
+              <div class="addon-row" data-addon="cloud_hosting">
+                <div class="addon-info-wrap">
+                  <div class="addon-chk">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
                   </div>
-                  <span class="addon-price-badge">+$25.000</span>
-                </label>
+                  <div>
+                    <div class="addon-label-main">Hosting Cloud Rápido + SSL (1er Mes)</div>
+                    <div class="addon-label-sub">Alojamiento de alta velocidad y soporte inicial</div>
+                  </div>
+                </div>
+                <span class="addon-badge-price">+$25.000</span>
               </div>
             </div>
           </div>
 
-          <!-- Columna Panel Resumen -->
-          <div class="calc-summary-panel">
+          <!-- Columna Resumen -->
+          <div class="calc-summary-box">
             <div>
-              <h3 class="calc-summary-heading">Resumen Estimado</h3>
-              <div class="summary-rows-stack">
-                <div class="summary-data-row">
-                  <span>Plan seleccionado:</span>
-                  <strong id="summaryPlanName" style="color:var(--text-primary);">Web Institucional</strong>
+              <div class="summary-heading">Tu Presupuesto Estimado</div>
+              <div class="summary-rows">
+                <div class="s-row">
+                  <span>Plan elegido:</span>
+                  <strong id="sumPlanName" style="color:var(--text-white);">Web Institucional</strong>
                 </div>
-                <div class="summary-data-row">
-                  <span>Dominio Propio & SSL:</span>
-                  <span style="color:var(--accent-emerald);">✓ Incluido</span>
+                <div class="s-row">
+                  <span>Dominio Propio:</span>
+                  <span style="color:var(--accent-green);">✓ Incluido</span>
                 </div>
-                <div class="summary-data-row">
-                  <span>Diseño Mobile-First:</span>
-                  <span style="color:var(--accent-emerald);">✓ 100% Celular</span>
+                <div class="s-row">
+                  <span>Adaptación Celulares:</span>
+                  <span style="color:var(--accent-green);">✓ 100% Celular</span>
                 </div>
-                <div class="summary-data-row total">
-                  <span>Total Estimado:</span>
-                  <span class="summary-total-figure gradient-text" id="summaryTotalAmount">$235.000 ARS</span>
+                <div class="s-row total-line">
+                  <span>Total estimado:</span>
+                  <span class="total-val" id="sumTotal">$235.000 ARS</span>
                 </div>
               </div>
 
-              <div class="calc-timeline-indicator">
+              <div class="time-chip">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                <span>Tiempo de entrega estimado: <strong id="summaryTimeEstimate">5 a 7 días hábiles</strong></span>
+                <span>Entrega promedio: <strong id="sumTime">5 a 7 días hábiles</strong></span>
               </div>
             </div>
 
             <div>
-              <a href="#" class="btn btn-whatsapp btn-lg" id="btnSendQuoteWhatsapp" target="_blank" rel="noopener noreferrer" style="width:100%;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-                <span>Consultar por WhatsApp con este valor</span>
+              <a href="#" class="btn btn-whatsapp" id="btnWhatsappQuote" style="width:100%;" target="_blank" rel="noopener noreferrer">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
+                <span>Consultar con esta cotización</span>
               </a>
-              <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:0.8rem;">
-                Valores de referencia ajustables a tus fotos, logo y cantidad de secciones.
+              <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:0.75rem;">
+                Valor referencial. Se ajusta según la cantidad de fotos y páginas que necesites.
               </p>
             </div>
           </div>
@@ -664,108 +551,111 @@
     </section>
 
     <!-- ==========================================================================
-         DIFERENCIALES & COMPARATIVA (POR QUÉ POLDEV)
+         POR QUÉ POLDEV (TARJETAS CLARAS SIN TABLAS DESBORDADAS)
          ========================================================================== -->
     <section class="section" id="por-que-poldev">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Diferenciales Claros</span>
+          <span class="section-eyebrow">Diferenciales Reales</span>
           <h2 class="section-title">¿Por qué elegir POLDEV Estudio?</h2>
-          <p class="section-subtitle">
-            Muchos creadores de páginas cobran suscripciones eternas, usan plantillas pesadas y no dan soporte humano. En POLDEV construimos herramientas reales de venta con código a medida.
+          <p class="section-desc">
+            No te atamos a suscripciones forzadas ni usamos plantillas pesadas. Creamos herramientas de venta profesionales.
           </p>
         </div>
 
-        <div class="matrix-table-wrap">
-          <table class="matrix-comparison-table">
-            <thead>
-              <tr>
-                <th>Característica</th>
-                <th class="col-highlight">POLDEV Estudio</th>
-                <th>Creadores Tipo Wix / Tiendanube</th>
-                <th>Plantillas WordPress Genéricas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Velocidad de carga real</strong></td>
-                <td class="col-highlight"><span class="check-pass">✓ Ultrarrápida (&lt;1.2s)</span></td>
-                <td><span class="cross-fail">✗ Lenta (4 a 8s)</span></td>
-                <td><span class="cross-fail">✗ Sobrecargada de plugins</span></td>
-              </tr>
-              <tr>
-                <td><strong>Adaptación móvil artesanal</strong></td>
-                <td class="col-highlight"><span class="check-pass">✓ 100% Mobile-First a mano</span></td>
-                <td>Parcialmente automática</td>
-                <td>Depende del tema instalado</td>
-              </tr>
-              <tr>
-                <td><strong>Propiedad del código y dominio</strong></td>
-                <td class="col-highlight"><span class="check-pass">✓ Sos 100% dueño de tu web</span></td>
-                <td><span class="cross-fail">✗ Atado a su plataforma</span></td>
-                <td>Requiere base de datos y parches</td>
-              </tr>
-              <tr>
-                <td><strong>Soporte y contacto directo</strong></td>
-                <td class="col-highlight"><span class="check-pass">✓ Por WhatsApp directo con Polo</span></td>
-                <td>Tickets lentos por email</td>
-                <td>Sin soporte oficial</td>
-              </tr>
-              <tr>
-                <td><strong>Posicionamiento Local en Google</strong></td>
-                <td class="col-highlight"><span class="check-pass">✓ Google Maps y semántica nativa</span></td>
-                <td>Básico / Limitado</td>
-                <td>Requiere plugins de pago extras</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="differences-grid">
+          <div class="diff-card">
+            <div class="diff-header">
+              <div class="diff-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <h3 class="diff-title">Velocidad en menos de 1s</h3>
+            </div>
+            <p class="diff-text">
+              Las plataformas tipo Wix o plantillas de WordPress tardan de 4 a 8 segundos en cargar. Nuestros sitios cargan al instante, incluso con conexiones móviles 4G lentas.
+            </p>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-header">
+              <div class="diff-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+              </div>
+              <h3 class="diff-title">100% Mobile-First a mano</h3>
+            </div>
+            <p class="diff-text">
+              Más del 85% de tus clientes entra desde un celular. Diseñamos cada botón, texto y foto para que se lea perfecto con el pulgar, sin desbordes ni letras enanas.
+            </p>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-header">
+              <div class="diff-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 2l-2 2m-2-2l2 2M3 21l9-9m0 0l3 3m-3-3l-3-3m7-6a4 4 0 1 1 5.66 5.66L15 17l-6-6 4.34-4.34z"/></svg>
+              </div>
+              <h3 class="diff-title">Sos 100% dueño de tu web</h3>
+            </div>
+            <p class="diff-text">
+              El dominio y el código te pertenecen legalmente. Si el día de mañana querés mudar tu sitio, te llevás todo. Sin comisiones sorpresa por cada venta.
+            </p>
+          </div>
+
+          <div class="diff-card">
+            <div class="diff-header">
+              <div class="diff-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </div>
+              <h3 class="diff-title">Soporte directo por WhatsApp</h3>
+            </div>
+            <p class="diff-text">
+              Sin tickets lentos por correo ni robots de atención. Hablás directamente con Polo para cualquier actualización de precios, fotos o consultas de tu página.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ==========================================================================
-         PROCESO PASO A PASO
+         PROCESO EN 4 PASOS
          ========================================================================== -->
-    <section class="section" id="proceso" style="background: rgba(13, 15, 23, 0.45);">
+    <section class="section" id="proceso" style="background: rgba(16, 18, 26, 0.45);">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Metodología Ágil</span>
-          <h2 class="section-title">De tu idea a la web online en 4 pasos</h2>
-          <p class="section-subtitle">
-            Un proceso sin vueltas ni tecnicismos complicados. Vos te ocupás de tu negocio; nosotros de poner tu marca en lo más alto de internet.
-          </p>
+          <span class="section-eyebrow">Paso a Paso</span>
+          <h2 class="section-title">De tu idea a la web online en 4 etapas</h2>
+          <p class="section-desc">Un método simple, sin vueltas ni tecnicismos aburridos.</p>
         </div>
 
-        <div class="process-steps-grid">
-          <div class="process-step-card">
-            <div class="process-counter-num">01</div>
-            <h3 class="process-step-title">Diagnóstico & Charla</h3>
-            <p class="process-step-desc">
-              Charlamos por WhatsApp sobre tu negocio, tus productos estrella y qué necesitás que haga la página (pedidos, turnos o ubicación).
+        <div class="process-list">
+          <div class="process-box">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Charla & Diagnóstico</h3>
+            <p class="step-text">
+              Hablamos por WhatsApp sobre tu local, tus productos estrella y qué necesitás que haga la web.
             </p>
           </div>
 
-          <div class="process-step-card">
-            <div class="process-counter-num">02</div>
-            <h3 class="process-step-title">Estructura & Diseño</h3>
-            <p class="process-step-desc">
-              Organizamos tus fotos reales, redactamos textos claros y diseñamos una interfaz limpia y atractiva adaptada a tu rubro.
+          <div class="process-box">
+            <div class="step-num">02</div>
+            <h3 class="step-title">Diseño & Estructura</h3>
+            <p class="step-text">
+              Organizamos tus fotos reales, redactamos textos claros y armamos la maqueta visual moderna.
             </p>
           </div>
 
-          <div class="process-step-card">
-            <div class="process-counter-num">03</div>
-            <h3 class="process-step-title">Programación & Conexión</h3>
-            <p class="process-step-desc">
-              Escribimos código nativo ultrarrápido, integramos el botón flotante de WhatsApp y el mapa con geolocalización precisa.
+          <div class="process-box">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Código & WhatsApp</h3>
+            <p class="step-text">
+              Programamos el sitio a mano, conectamos el botón de WhatsApp directo y el mapa de Google.
             </p>
           </div>
 
-          <div class="process-step-card">
-            <div class="process-counter-num">04</div>
-            <h3 class="process-step-title">Lanzamiento & Soporte</h3>
-            <p class="process-step-desc">
-              Conectamos tu dominio (.com / .com.ar), activamos la seguridad SSL y te acompañamos mes a mes para actualizar fotos o precios.
+          <div class="process-box">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Publicación & Soporte</h3>
+            <p class="step-text">
+              Conectamos tu dominio oficial (.com / .com.ar), activamos el candado SSL y quedás online.
             </p>
           </div>
         </div>
@@ -778,88 +668,68 @@
     <section class="section" id="faq">
       <div class="container">
         <div class="section-header">
-          <span class="section-eyebrow">Dudas Resueltas</span>
+          <span class="section-eyebrow">Dudas Habituales</span>
           <h2 class="section-title">Preguntas Frecuentes</h2>
-          <p class="section-subtitle">
-            Todo lo que necesitás saber antes de dar el paso digital con tu comercio.
-          </p>
+          <p class="section-desc">Respuestas claras para que tomes la mejor decisión para tu negocio.</p>
         </div>
 
-        <div class="faq-accordion-stack">
-          <!-- FAQ 1 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
-              <span>¿Cuánto tiempo tarda en estar lista mi página web?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="faq-wrap">
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>¿Cuánto tiempo tarda en estar lista mi web?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                Una landing page o web institucional promedio se entrega en <strong>5 a 7 días hábiles</strong> desde que contamos con las fotos y datos básicos de tu negocio. Si es un catálogo más amplio con tienda, entre 10 y 14 días hábiles.
+            <div class="faq-ans">
+              <div class="faq-ans-inner">
+                Una landing page o web institucional promedio se entrega en <strong>5 a 7 días hábiles</strong> desde que tenemos las fotos y los textos de tu negocio. Si es un catálogo más grande o tienda, entre 10 y 14 días.
               </div>
             </div>
           </div>
 
-          <!-- FAQ 2 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
+          <div class="faq-item">
+            <button class="faq-q">
               <span>¿Tengo que saber de computación para mantenerla?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                <strong>Para nada.</strong> Ese es el principal diferencial de POLDEV: con nuestro abono mensual de mantenimiento, cualquier cambio de precios, promociones del mes o fotos nuevas nos las mandás por WhatsApp y nosotros las actualizamos por vos.
+            <div class="faq-ans">
+              <div class="faq-ans-inner">
+                <strong>Para nada.</strong> Con nuestro abono mensual de mantenimiento, cualquier cambio de precios, fotos o promociones nos lo mandás por WhatsApp y nosotros lo actualizamos por vos.
               </div>
             </div>
           </div>
 
-          <!-- FAQ 3 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
-              <span>¿El dominio y la página web quedan a mi nombre?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>¿El dominio y la página quedan a mi nombre?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                Sí, 100%. El dominio se registra bajo tu titularidad legal en NIC Argentina (.com.ar) o registradores internacionales (.com). La propiedad intelectual y comercial te pertenece en su totalidad.
+            <div class="faq-ans">
+              <div class="faq-ans-inner">
+                Sí, absolutamente. El dominio se gestiona a tu nombre legal en NIC Argentina (.com.ar) o registradores internacionales (.com). La titularidad de tu marca y web te pertenece al 100%.
               </div>
             </div>
           </div>
 
-          <!-- FAQ 4 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
-              <span>¿Qué incluye el abono mensual de mantenimiento?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                Incluye el servidor cloud de máxima velocidad (CDN global), la renovación del certificado SSL (candadito verde seguro), copias de seguridad automáticas y modificaciones mensuales de textos, promociones o imágenes para que tu web nunca quede obsoleta.
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ 5 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
+          <div class="faq-item">
+            <button class="faq-q">
               <span>¿Cómo son las formas de pago?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                Cobramos el 50% de anticipo al iniciar el desarrollo y el 50% restante una vez que el sitio está probado, aprobado por vos en tu celular y listo para publicarse. Aceptamos transferencias bancarias, Mercado Pago y efectivo.
+            <div class="faq-ans">
+              <div class="faq-ans-inner">
+                Trabajamos con 50% de anticipo para iniciar el desarrollo y el 50% restante una vez que el sitio está probado en tu celular y listo para salir al público. Aceptamos transferencias bancarias, Mercado Pago y efectivo.
               </div>
             </div>
           </div>
 
-          <!-- FAQ 6 -->
-          <div class="faq-panel-item">
-            <button type="button" class="faq-trigger-btn" aria-expanded="false">
-              <span>¿Qué pasa si ya tengo un logo o fotos tomadas con mi celular?</span>
-              <svg class="faq-chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <div class="faq-item">
+            <button class="faq-q">
+              <span>¿Qué pasa si ya tengo fotos de mi local tomadas con el celular?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
-            <div class="faq-content-drawer">
-              <div class="faq-content-inner">
-                ¡Es lo ideal! Las fotos reales de tu local, de tus productos o de tu fachada transmiten muchísima más confianza que las imágenes de banco genéricas. Nosotros nos encargamos de recortarlas, optimizarlas y hacer que luzcan profesionales en pantalla.
+            <div class="faq-ans">
+              <div class="faq-ans-inner">
+                ¡Es lo ideal! Las fotos reales de tu local y tus productos generan 10 veces más confianza que fotos genéricas de internet. Nosotros las optimizamos para que se vean nítidas y vuelen en celulares.
               </div>
             </div>
           </div>
@@ -868,110 +738,100 @@
     </section>
 
     <!-- ==========================================================================
-         CONTACTO & TARJETA DIGITAL
+         CONTACTO
          ========================================================================== -->
     <section class="section" id="contacto">
       <div class="container">
-        <div class="contact-layout-grid">
-          <!-- Tarjeta de Presentación Digital del Estudio -->
-          <div class="studio-card-box">
-            <div class="studio-card-header">
-              <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:42px;">
-              <div class="studio-tagline">Desarrollo Web & Presencia Digital</div>
+        <div class="contact-layout">
+          <!-- Tarjeta Digital -->
+          <div class="contact-card">
+            <div>
+              <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:38px; margin-bottom:0.75rem;">
+              <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6;">
+                Hacé que tu comercio dé el salto formal a internet. Escribinos para coordinar una llamada o charlar directamente sobre tu proyecto.
+              </p>
+
+              <div class="contact-lines">
+                <div class="contact-line">
+                  <span style="display:flex; align-items:center; gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +54 9 11 1234 5678
+                  </span>
+                  <button type="button" class="btn-copy" data-copy="+5491112345678">Copiar</button>
+                </div>
+
+                <div class="contact-line">
+                  <span style="display:flex; align-items:center; gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    hola@poldev.com.ar
+                  </span>
+                  <button type="button" class="btn-copy" data-copy="hola@poldev.com.ar">Copiar</button>
+                </div>
+
+                <div class="contact-line">
+                  <span style="display:flex; align-items:center; gap:0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Buenos Aires, Argentina
+                  </span>
+                  <span style="font-size:0.75rem; color:var(--accent-green); font-weight:700;">Atención Nacional</span>
+                </div>
+              </div>
             </div>
 
-            <p style="font-size:0.92rem; color:var(--text-secondary); line-height:1.6; margin-bottom:1.8rem;">
-              Hacé que tu comercio dé el salto formal a internet. Escribinos para coordinar una llamada o charlar directamente sobre lo que tenés en mente.
-            </p>
-
-            <div class="contact-channels-list">
-              <div class="contact-channel-row">
-                <div class="channel-info-left">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                  <span>+54 9 11 1234 5678</span>
-                </div>
-                <button type="button" class="copy-mini-btn" data-copy="+5491112345678">Copiar</button>
-              </div>
-
-              <div class="contact-channel-row">
-                <div class="channel-info-left">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                  <span>hola@poldev.com.ar</span>
-                </div>
-                <button type="button" class="copy-mini-btn" data-copy="hola@poldev.com.ar">Copiar</button>
-              </div>
-
-              <div class="contact-channel-row">
-                <div class="channel-info-left">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                  <span>Buenos Aires, Argentina (Atención Nacional)</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Quiero%20hacer%20una%20consulta%20para%20crear%20mi%20web" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Quiero%20consultar%20por%20una%20web" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
               <span>Abrir chat de WhatsApp</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
           </div>
 
-          <!-- Formulario de Consulta Rápida -->
-          <form class="contact-inquiry-form" id="contactInquiryForm">
+          <!-- Formulario -->
+          <form class="contact-form" id="contactQuickForm">
             <div>
-              <h3 style="font-size:1.35rem; font-weight:800; margin-bottom:0.35rem;">Envianos tu consulta</h3>
-              <p style="font-size:0.86rem; color:var(--text-secondary);">
-                Completá estos datos y se abrirá WhatsApp con tu mensaje listo para enviar.
-              </p>
+              <h3 style="font-size:1.3rem; font-weight:800; color:var(--text-white); margin-bottom:0.25rem;">Envianos tu consulta</h3>
+              <p style="font-size:0.85rem; color:var(--text-secondary);">Completá tus datos y se abrirá WhatsApp con el mensaje listo.</p>
             </div>
 
-            <div class="form-field-group">
-              <label for="formClientName" class="form-field-label">Tu nombre o contacto *</label>
-              <input type="text" id="formClientName" class="form-field-input" placeholder="Ej: Marcelo Gómez" required>
+            <div>
+              <label for="cName" class="form-label">Tu nombre o contacto *</label>
+              <input type="text" id="cName" class="form-input" placeholder="Ej: Marcelo Gómez" required>
             </div>
 
-            <div class="form-field-group">
-              <label for="formClientBusiness" class="form-field-label">Nombre de tu comercio o rubro</label>
-              <input type="text" id="formClientBusiness" class="form-field-input" placeholder="Ej: Vivero, Taller de motos, Almacén...">
+            <div>
+              <label for="cBiz" class="form-label">Nombre de tu negocio o rubro</label>
+              <input type="text" id="cBiz" class="form-input" placeholder="Ej: Vivero, Taller de motos, Almacén...">
             </div>
 
-            <div class="form-field-group">
-              <label for="formClientMessage" class="form-field-label">¿Qué estás necesitando para tu web? *</label>
-              <textarea id="formClientMessage" class="form-field-textarea" placeholder="Contanos brevemente qué te gustaría que tenga tu página..." required></textarea>
+            <div>
+              <label for="cMsg" class="form-label">¿Qué estás necesitando para tu página? *</label>
+              <textarea id="cMsg" class="form-textarea" placeholder="Contanos qué te gustaría que tenga tu sitio..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="margin-top:0.4rem;">
+            <button type="submit" class="btn btn-primary" style="margin-top:0.4rem;">
               <span>Enviar consulta por WhatsApp</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </button>
           </form>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- ==========================================================================
        FOOTER
        ========================================================================== -->
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <div class="footer-nav-grid">
-        <!-- Columna Marca -->
+      <div class="footer-grid">
         <div>
-          <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:36px;">
-          <p class="footer-brand-bio">
-            Transformamos negocios locales en marcas confiables, visibles y rentables en internet. Tu idea, nuestro código.
+          <img src="assets/logo/poldev-logo.svg" alt="POLDEV" style="height:32px; margin-bottom:0.8rem;">
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.6; max-width:300px;">
+            Hacemos que comercios y pymes barriales tengan presencia formal, moderna y visible en internet. Tu idea, nuestro código.
           </p>
-          <div class="footer-status-pill">
-            <span class="status-beacon-dot" style="width:6px; height:6px;"></span>
-            <span>Servidores Cloud • Uptime 99.9%</span>
-          </div>
         </div>
 
-        <!-- Columna Proyectos -->
         <div>
-          <h4 class="footer-col-header">Casos Reales</h4>
-          <ul class="footer-links-stack">
+          <div class="footer-title">Proyectos Reales</div>
+          <ul class="footer-links">
             <li><a href="#proyectos">Motos GMW (Taller)</a></li>
             <li><a href="#proyectos">Vivero Vía Verde (Plantas)</a></li>
             <li><a href="#proyectos">Escuela Danza Sánchez</a></li>
@@ -980,31 +840,19 @@
           </ul>
         </div>
 
-        <!-- Columna Soluciones -->
         <div>
-          <h4 class="footer-col-header">Soluciones</h4>
-          <ul class="footer-links-stack">
+          <div class="footer-title">Soluciones</div>
+          <ul class="footer-links">
             <li><a href="#servicios">Web Institucional</a></li>
             <li><a href="#servicios">Landing Pages</a></li>
             <li><a href="#servicios">Catálogos & Tiendas</a></li>
-            <li><a href="#servicios">Abono de Mantenimiento</a></li>
             <li><a href="#calculadora">Calculadora Express</a></li>
-          </ul>
-        </div>
-
-        <!-- Columna Contacto & GitHub -->
-        <div>
-          <h4 class="footer-col-header">POLDEV</h4>
-          <ul class="footer-links-stack">
-            <li><a href="https://github.com/poldevestudio/poldevweb" target="_blank" rel="noopener noreferrer">Repositorio GitHub</a></li>
-            <li><a href="#por-que-poldev">¿Por qué Nosotros?</a></li>
-            <li><a href="#faq">Preguntas Frecuentes</a></li>
             <li><a href="#contacto">Contacto Directo</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-legal-bar">
+      <div class="footer-bottom">
         <div>&copy; 2026 POLDEV Estudio. Todos los derechos reservados.</div>
         <div>Desarrollo web con criterio y pasión en Buenos Aires, Argentina.</div>
       </div>
@@ -1014,62 +862,52 @@
   <!-- ==========================================================================
        MODAL DE CASO DE ESTUDIO
        ========================================================================== -->
-  <div class="modal-scrim-overlay" id="caseModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalCaseTitle">
-    <div class="modal-dialog-card">
-      <div class="modal-header-strip">
-        <div>
-          <span class="showcase-tag-pill" id="modalCaseCategory">Categoría</span>
-          <h3 style="font-size:1.3rem; font-weight:800; color:#fff;" id="modalCaseTitle">Proyecto</h3>
-        </div>
-        <button type="button" class="modal-dismiss-btn" id="modalDismissBtn" aria-label="Cerrar modal">
+  <div class="modal-overlay" id="modalCaseOverlay">
+    <div class="modal-sheet">
+      <div class="modal-top">
+        <span class="card-rubro-pill" id="mCategory" style="position:static;">Categoría</span>
+        <button class="modal-close-btn" id="mCloseBtn" aria-label="Cerrar">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
       </div>
 
-      <div class="modal-body-scroll">
-        <div class="modal-preview-frame">
-          <img src="" alt="Captura del proyecto" id="modalCaseImg">
-        </div>
+      <h3 style="font-size:1.35rem; font-weight:800; color:var(--text-white); margin-bottom:1rem;" id="mTitle">Proyecto</h3>
 
-        <p id="modalCaseSummary" style="font-size:0.95rem; font-weight:600; color:var(--text-primary); margin-bottom:1.2rem; line-height:1.6;"></p>
+      <div class="modal-img-frame">
+        <img src="" alt="Captura de proyecto" id="mImg">
+      </div>
 
-        <div style="margin-bottom:1.1rem;">
-          <h4 style="font-size:0.88rem; font-weight:800; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.35rem;">El Desafío del Negocio:</h4>
-          <p id="modalCaseChallenge" style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;"></p>
-        </div>
+      <p style="font-size:0.92rem; font-weight:600; color:var(--text-primary); margin-bottom:1.1rem; line-height:1.55;" id="mSummary"></p>
 
-        <div style="margin-bottom:1.4rem;">
-          <h4 style="font-size:0.88rem; font-weight:800; color:var(--accent-emerald); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:0.35rem;">La Solución de POLDEV:</h4>
-          <p id="modalCaseSolution" style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6;"></p>
-        </div>
+      <div style="margin-bottom:1rem;">
+        <h4 style="font-size:0.85rem; font-weight:800; color:var(--accent-cyan); text-transform:uppercase; margin-bottom:0.25rem;">El Desafío:</h4>
+        <p style="font-size:0.86rem; color:var(--text-secondary); line-height:1.55;" id="mChallenge"></p>
+      </div>
 
-        <div class="modal-metrics-strip" id="modalMetricsStrip">
-          <!-- Inyectado dinámicamente -->
-        </div>
+      <div style="margin-bottom:1.4rem;">
+        <h4 style="font-size:0.85rem; font-weight:800; color:var(--accent-green); text-transform:uppercase; margin-bottom:0.25rem;">La Solución POLDEV:</h4>
+        <p style="font-size:0.86rem; color:var(--text-secondary); line-height:1.55;" id="mSolution"></p>
+      </div>
 
-        <div style="display:flex; justify-content:flex-end; gap:0.8rem; margin-top:1.5rem;">
-          <a href="#calculadora" class="btn btn-primary" id="modalCtaBtn">
-            <span>Quiero una web similar para mi local</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
+      <div style="display:flex; justify-content:flex-end;">
+        <a href="#calculadora" class="btn btn-primary btn-sm" id="mCta">
+          <span>Quiero una web similar</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </div>
 
-  <!-- Botón Flotante de WhatsApp -->
-  <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Estuve%20viendo%20su%20web%20y%20quiero%20hacerles%20una%20consulta" class="floating-whatsapp-trigger" target="_blank" rel="noopener noreferrer" aria-label="Abrir WhatsApp de POLDEV">
+  <!-- Botón Flotante WhatsApp -->
+  <a href="https://wa.me/5491112345678?text=Hola%20Poldev!%20Quiero%20consultar%20por%20una%20web" class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824z"/></svg>
-    <span class="floating-unread-dot">1</span>
+    <span class="wa-dot"></span>
   </a>
 
-  <!-- Toast de Notificaciones -->
-  <div class="toast-alert" id="toastAlert" role="status" aria-live="polite">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-    <span id="toastMessage">Texto copiado al portapapeles</span>
-  </div>
+  <!-- Toast -->
+  <div class="toast" id="toastNotice">Copiado al portapapeles</div>
 
-  <!-- JavaScript Modular Vanilla -->
+  <!-- JavaScript -->
   <script src="js/main.js"></script>
 </body>
 </html>
