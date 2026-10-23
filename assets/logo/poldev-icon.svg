@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="pGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <filter id="subtleGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#0284c7" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Main P outer curve & upper loop -->
+  <path d="M12 6 H 29 C 37 6 42 11 42 19 C 42 27 37 32 29 32 H 22 L 18 42 H 10 L 17 25 H 28 C 32 25 34.5 22.5 34.5 19 C 34.5 15.5 32 13 28 13 H 19 L 16 20 H 10 L 12 6 Z" fill="#FFFFFF"/>
+  <!-- Dynamic Blue Slash Accent -->
+  <path d="M11 42 L 20 22 H 27 L 18 42 H 11 Z" fill="url(#pGlow)" filter="url(#subtleGlow)"/>
+</svg>
